@@ -25,7 +25,7 @@ class ProductModel:
         return data
 
     def convert_to_item_in_cart(self):
-        return ItemInCart(self.id, self.title,self.url ,float(self.price), self.description, amount=1)
+        return ItemInCart(self.id, self.title, self.url, float(self.price), self.description, amount=1)
 
 
 class ItemInCart:
@@ -62,6 +62,33 @@ class ItemInCart:
         self.amount += 1
 
 
+class UserModel:
+    def __init__(self, email="", password="", address="", is_male=False, is_admin=False):
+        self.password = password
+        self.email = email
+        self.address = address
+        self.is_male = is_male
+        self.is_admin = is_admin
+
+    def set_data(self, data):
+        self.password = data['password']
+        self.address = data['address']
+        self.is_male = data['is_male']
+        self.is_admin = data['is_admin']
+        self.email = data['email']
+        return self
+
+    def to_json(self):
+        data = {
+            'password': self.password,
+            'address': self.address,
+            'is_male': self.is_male,
+            'is_admin': self.is_admin,
+            'email': self.email
+        }
+        return data
+
+
 def createProductModel(list_data):
     products = []
     for data in list_data:
@@ -72,7 +99,7 @@ def createProductModel(list_data):
                 data['url'],
                 data['price'],
                 data['description'],
-                
+
             )
         )
     return products
@@ -92,3 +119,18 @@ def createCart(list_data):
             )
         )
     return cart
+
+
+def createUserModel(list_data):
+    users = []
+    for data in list_data:
+        users.append(
+            UserModel(
+                data['email'],                
+                data['password'],
+                data['address'],
+                data['is_male'],
+                data['is_admin']
+            )
+        )
+    return users

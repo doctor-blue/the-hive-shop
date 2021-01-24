@@ -4,12 +4,15 @@ import socket
 
 import web
 from error_handler import ErrorHandler
-from model import ProductModel, createProductModel, createCart
+from model import *
 from response_handler import ResponseHandler
 
 routes = (
     '/products', 'Product',
-    '/cart', 'Cart'
+    '/cart', 'Cart',
+    '/authentication/signin', 'SignIn',
+    '/authentication/signup', 'SignUp',
+    '/authentication/profile', 'Profile'
 )
 
 err_handler = ErrorHandler()
@@ -17,6 +20,7 @@ res_handler = ResponseHandler()
 
 products = []
 cart = []
+users = []
 
 # get all products
 with open('product_test.json', 'r') as file:
@@ -25,6 +29,10 @@ with open('product_test.json', 'r') as file:
 # get all item from cart
 with open('cart.json', 'r') as file:
     cart = createCart(json.load(file))
+
+# get all users (J4F)
+with open('users.json', 'r') as file:
+    users = createUserModel(json.load(file))
 
 # get Ip Address
 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -42,6 +50,13 @@ def convert_cart_to_json():
     for item in cart:
         cart_json.append(item.to_json())
     return cart_json
+
+
+def convert_users_to_json():
+    users_json = []
+    for item in users:
+        users_json.append(item.to_json())
+    return users_json
 
 
 class Product:
@@ -94,6 +109,72 @@ class Cart:
                 print("index", index)
                 cart.pop(index)
                 return res_handler.created_with_results(product.to_json())
+
+
+def find_user(email):
+    for user in users:
+        if user.email == email:
+            return user
+    return None
+# J4F
+
+
+class SignIn:
+    def __init__(self):
+        pass
+
+    def POST(self):
+        user_obj = UserModel()
+        user_obj.set_data(json.loads(web.webapi.data()))
+
+        user = find_user(user_obj.email)
+        if user is not None:
+            if user.password == user_obj.password:
+                return res_handler.get_with_results(user.to_json())
+            else:
+                return err_handler.handle_input_error({'message': 'Email or password is incorrect!'})
+        else:
+            return err_handler.handle_input_error({'message': 'Email or password is incorrect!'})
+
+
+class SignUp:
+    def __init__(self):
+        pass
+
+    def POST(self):
+        user_obj = UserModel()
+        user_obj.set_data(json.loads(web.webapi.data()))
+
+        user = find_user(user_obj.email)
+
+        if user is None:
+            users.append(user_obj)
+            with open('users.json', 'w') as file:
+                json.dump(convert_users_to_json(), file)
+        else:
+            return err_handler.handle_input_error({"message": "Email is already taken"})
+
+
+class Profile:
+    def __init__(self):
+        pass
+
+    def POST(self):
+        user_obj = UserModel()
+        user_obj.set_data(json.loads(web.webapi.data()))
+
+        user = find_user(user_obj.email)
+        if user is not None:
+            user.address = user_obj.address
+            user.is_male = user_obj.is_male
+            user.password = user_obj.password
+
+            with open('users.json', 'w') as file:
+                json.dump(convert_users_to_json(), file)
+
+            return res_handler.get_with_results(user_obj.to_json())
+        else:
+            return err_handler.handle_input_error({"message": "User not found!"})
 
 
 if __name__ == "__main__":
