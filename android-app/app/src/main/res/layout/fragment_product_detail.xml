@@ -95,7 +95,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/add_to_card"
+                android:text="@string/add_to_cart"
                 app:icon="@drawable/ic_baseline_add_shopping_cart_24"
                 app:iconTint="@color/textColorPrimary"
                 android:layout_marginRight="12dp"

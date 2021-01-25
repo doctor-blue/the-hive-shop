@@ -14,7 +14,7 @@ class SignUpFragment : BaseFragment() {
 
     private val binding = getViewBinding() as FragmentSignupBinding
 
-    override fun getLayoutId(): Int = 0
+    override fun getLayoutId(): Int = R.layout.fragment_signup
 
     override fun initControls(view: View, savedInstanceState: Bundle?) {
 
