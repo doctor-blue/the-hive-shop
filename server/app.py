@@ -220,7 +220,7 @@ class Profile:
     def __init__(self):
         pass
 
-    def POST(self):
+    def PUT(self):
         user_obj = UserModel()
         user_obj.set_data(json.loads(web.webapi.data()))
 
