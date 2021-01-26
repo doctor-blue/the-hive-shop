@@ -32,7 +32,7 @@
             android:id="@+id/txt_product_title"
             android:textColor="@color/textColorPrimary"
             android:textAppearance="?attr/textAppearanceSubtitle2"  />
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/txt_product_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
