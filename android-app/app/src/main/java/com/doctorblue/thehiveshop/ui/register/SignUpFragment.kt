@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.doctorblue.thehiveshop.R
 import com.doctorblue.thehiveshop.base.BaseFragment
 import com.doctorblue.thehiveshop.databinding.FragmentLoginBinding
@@ -16,6 +18,10 @@ class SignUpFragment : BaseFragment() {
         getViewBinding() as FragmentSignupBinding
     }
 
+    private val controller by lazy {
+        findNavController()
+    }
+
     override fun getLayoutId(): Int = R.layout.fragment_signup
 
     override fun initControls(view: View, savedInstanceState: Bundle?) {
@@ -23,7 +29,9 @@ class SignUpFragment : BaseFragment() {
     }
 
     override fun initEvents() {
-
+        binding.btnBackToLogin.setOnClickListener {
+            controller.popBackStack()
+        }
     }
 
 }
