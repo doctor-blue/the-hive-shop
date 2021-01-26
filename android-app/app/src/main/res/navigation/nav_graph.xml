@@ -1,23 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/productFragment">
 
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.doctorblue.thehiveshop.ui.login.LoginFragment"
-        android:label="LoginFragment" >
-        <action
-            android:id="@+id/action_loginFragment_to_signUpFragment"
-            app:destination="@id/signUpFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_productFragment"
-            app:destination="@id/productFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/signUpFragment"
-        android:name="com.doctorblue.thehiveshop.ui.register.SignUpFragment"
-        android:label="SignUpFragment" />
     <fragment
         android:id="@+id/productFragment"
         android:name="com.doctorblue.thehiveshop.ui.product.ProductFragment"
@@ -28,6 +13,9 @@
         <action
             android:id="@+id/action_productFragment_to_cartFragment"
             app:destination="@id/cartFragment" />
+        <action
+            android:id="@+id/action_productFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/productDetailFragment"

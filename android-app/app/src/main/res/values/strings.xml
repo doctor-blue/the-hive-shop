@@ -19,6 +19,7 @@
     <string name="date_of_birth">Date Of Birth</string>
     <string name="gender">Gender</string>
     <string name="phone_number">Phone Number</string>
+    <string name="address">Address</string>
     <string name="change_password">Change Password</string>
     <string name="item_1">Item 1</string>
 </resources>
