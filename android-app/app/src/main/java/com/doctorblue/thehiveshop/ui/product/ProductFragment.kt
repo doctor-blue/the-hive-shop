@@ -14,7 +14,7 @@ class ProductFragment : BaseFragment() {
 
     private val binding = getViewBinding() as FragmentProductBinding
 
-    override fun getLayoutId(): Int = 0
+    override fun getLayoutId(): Int = R.layout.fragment_product
 
     override fun initControls(view: View, savedInstanceState: Bundle?) {
 

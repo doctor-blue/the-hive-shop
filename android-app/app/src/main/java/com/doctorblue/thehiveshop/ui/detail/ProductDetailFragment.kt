@@ -7,10 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.doctorblue.thehiveshop.R
 import com.doctorblue.thehiveshop.base.BaseFragment
+import com.doctorblue.thehiveshop.databinding.FragmentLoginBinding
+import com.doctorblue.thehiveshop.databinding.FragmentProductDetailBinding
 
 class ProductDetailFragment : BaseFragment() {
+    private val binding = getViewBinding() as FragmentProductDetailBinding
 
-    override fun getLayoutId(): Int = 0
+    override fun getLayoutId(): Int = R.layout.fragment_product_detail
 
     override fun initControls(view: View, savedInstanceState: Bundle?) {
 

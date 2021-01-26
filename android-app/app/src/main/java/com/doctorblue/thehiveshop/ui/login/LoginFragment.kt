@@ -11,7 +11,7 @@ class LoginFragment : BaseFragment() {
 
     private val binding = getViewBinding() as FragmentLoginBinding
 
-    override fun getLayoutId(): Int = 0
+    override fun getLayoutId(): Int = R.layout.fragment_login
 
     override fun initControls(view: View, savedInstanceState: Bundle?) {
 
