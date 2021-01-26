@@ -11,7 +11,9 @@ import com.doctorblue.thehiveshop.databinding.FragmentLoginBinding
 import com.doctorblue.thehiveshop.databinding.FragmentProductDetailBinding
 
 class ProductDetailFragment : BaseFragment() {
-    private val binding = getViewBinding() as FragmentProductDetailBinding
+    private val binding by lazy {
+        getViewBinding() as FragmentProductDetailBinding
+    }
 
     override fun getLayoutId(): Int = R.layout.fragment_product_detail
 

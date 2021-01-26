@@ -11,7 +11,9 @@ import com.doctorblue.thehiveshop.databinding.FragmentCartBinding
 import com.doctorblue.thehiveshop.databinding.FragmentLoginBinding
 
 class CartFragment : BaseFragment() {
-    private val binding = getViewBinding() as FragmentCartBinding
+    private val binding by lazy {
+        getViewBinding() as FragmentCartBinding
+    }
 
     override fun getLayoutId(): Int = R.layout.fragment_cart
 
