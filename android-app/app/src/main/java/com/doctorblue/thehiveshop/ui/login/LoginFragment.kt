@@ -9,7 +9,8 @@ import com.doctorblue.thehiveshop.databinding.FragmentLoginBinding
 
 class LoginFragment : BaseFragment() {
 
-    private val binding = getViewBinding() as FragmentLoginBinding
+    private val binding: FragmentLoginBinding
+        get() = (getViewBinding() as FragmentLoginBinding)
 
     override fun getLayoutId(): Int = R.layout.fragment_login
 

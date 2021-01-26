@@ -12,7 +12,8 @@ import com.doctorblue.thehiveshop.databinding.FragmentSignupBinding
 
 class SignUpFragment : BaseFragment() {
 
-    private val binding = getViewBinding() as FragmentSignupBinding
+    private val binding: FragmentSignupBinding
+        get() = (getViewBinding() as FragmentSignupBinding)
 
     override fun getLayoutId(): Int = R.layout.fragment_signup
 
