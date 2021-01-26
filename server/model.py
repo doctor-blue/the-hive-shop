@@ -41,9 +41,9 @@ class ItemInCart:
         self.id = data['id']
         self.title = data['title']
         self.url = data['url']
-        self.price = data['price']
+        self.price = float(data['price'])
         self.description = data['description']
-        self.amount = data['amount']
+        self.amount = int(data['amount'])
         return self
 
     def to_json(self):
@@ -51,15 +51,12 @@ class ItemInCart:
             'id': self.id,
             'title': self.title,
             'url': self.url,
-            'price': self.price,
+            'price': float(self.price),
             'description': self.description,
-            'amount': self.amount
+            'amount': int(self.amount)
         }
         return data
 
-    def increase_amount(self, price):
-        self.price = self.price+float(price)
-        self.amount += 1
 
 
 class UserModel:
@@ -108,15 +105,24 @@ def createProductModel(list_data):
 def createCart(list_data):
     cart = []
     for data in list_data:
-        cart.append(
-            ItemInCart(
-                data['id'],
-                data['title'],
-                data['url'],
-                float(data['price']),
-                data['description'],
-                int(data['amount'])
+        items = data['items']
+        items_in_cart = []
+        for item in items:
+            items_in_cart.append(
+                ItemInCart(
+                    item['id'],
+                    item['title'],
+                    item['url'],
+                    float(item['price']),
+                    item['description'],
+                    int(item['amount'])
+                )
             )
+        cart.append(
+            {
+                'email': data['email'],
+                'items': items_in_cart
+            }
         )
     return cart
 
@@ -126,7 +132,7 @@ def createUserModel(list_data):
     for data in list_data:
         users.append(
             UserModel(
-                data['email'],                
+                data['email'],
                 data['password'],
                 data['address'],
                 data['is_male'],

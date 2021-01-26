@@ -14,11 +14,10 @@
         "description": "description 2"
     },
     {
-        "id":"2",
+        "id": "2",
         "title": "Whitney belt",
         "url": "https://storage.googleapis.com/material-vignettes.appspot.com/image/2-0.jpg",
         "price": "$35",
         "description": "description 3"
-
     }
 ]
