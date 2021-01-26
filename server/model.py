@@ -58,14 +58,15 @@ class ItemInCart:
         return data
 
 
-
 class UserModel:
-    def __init__(self, email="", password="", address="", is_male=False, is_admin=False):
+    def __init__(self, email="", password="", address="", is_male=False, is_admin=False, date_of_birth="", phone_number="",):
         self.password = password
         self.email = email
         self.address = address
         self.is_male = is_male
         self.is_admin = is_admin
+        self.date_of_birth = date_of_birth
+        self.phone_number = phone_number
 
     def set_data(self, data):
         self.password = data['password']
@@ -73,6 +74,8 @@ class UserModel:
         self.is_male = data['is_male']
         self.is_admin = data['is_admin']
         self.email = data['email']
+        self.date_of_birth = data['date_of_birth']
+        self.phone_number = data['phone_number']
         return self
 
     def to_json(self):
@@ -81,7 +84,9 @@ class UserModel:
             'address': self.address,
             'is_male': self.is_male,
             'is_admin': self.is_admin,
-            'email': self.email
+            'email': self.email,
+            'date_of_birth': self.date_of_birth,
+            'phone_number': self.phone_number
         }
         return data
 
@@ -136,7 +141,9 @@ def createUserModel(list_data):
                 data['password'],
                 data['address'],
                 data['is_male'],
-                data['is_admin']
+                data['is_admin'],
+                data['date_of_birth'],
+                data['phone_number']
             )
         )
     return users
