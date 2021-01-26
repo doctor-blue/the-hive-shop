@@ -2,19 +2,17 @@ package com.doctorblue.thehiveshop.ui.login
 
 import android.os.Bundle
 import android.view.View
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.doctorblue.thehiveshop.R
 import com.doctorblue.thehiveshop.base.BaseFragment
 import com.doctorblue.thehiveshop.databinding.FragmentLoginBinding
-import kotlinx.android.synthetic.main.fragment_signup.*
 
 
 class LoginFragment : BaseFragment() {
 
-    private val binding by lazy {
-        getViewBinding() as FragmentLoginBinding
-    }
+    private val binding: FragmentLoginBinding
+        get() = (getViewBinding() as FragmentLoginBinding)
+
 
     private val controller by lazy {
         findNavController()
@@ -27,7 +25,7 @@ class LoginFragment : BaseFragment() {
     }
 
     override fun initEvents() {
-        btn_register.setOnClickListener {
+        binding.btnRegister.setOnClickListener {
             controller.navigate(R.id.action_loginFragment_to_signUpFragment)
         }
 

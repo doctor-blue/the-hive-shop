@@ -8,9 +8,8 @@ import com.doctorblue.thehiveshop.databinding.FragmentSettingsBinding
 
 class SettingsFragment : BaseFragment() {
 
-    private val binding  by lazy {
-        getViewBinding() as FragmentSettingsBinding
-    }
+    private val binding: FragmentSettingsBinding
+        get() = (getViewBinding() as FragmentSettingsBinding)
 
     override fun getLayoutId(): Int = R.layout.fragment_settings
 
