@@ -59,6 +59,13 @@ def convert_users_to_json():
     return users_json
 
 
+def find_item_in_cart(product):
+    for item in cart:
+        if item.id == product.id:
+            return item
+    return None
+
+
 class Product:
     def __init__(self):
         pass
@@ -85,30 +92,41 @@ class Cart:
             return err_handler.handle_server_error(err)
 
     def POST(self):
-        product = ProductModel()
-        product.set_data(json.loads(web.webapi.data()))
+        item_in_cart = ItemInCart()
+        json_data = json.loads(web.webapi.data())
+        item_in_cart.set_data(json_data)
 
-        for index, item in enumerate(cart):
-            if item.id == product.id:
-                item.increase_amount(product.price)
-                with open('cart.json', 'w') as file:
-                    json.dump(convert_cart_to_json(), file)
-                return res_handler.created_with_results(product.to_json())
-
-        cart.append(product.convert_to_item_in_cart())
-        with open('cart.json', 'w') as file:
-            json.dump(convert_cart_to_json(), file)
-        return res_handler.created_with_results(product.to_json())
+        item = find_item_in_cart(item_in_cart)
+        if item is None:
+            cart.append(item_in_cart)
+            with open('cart.json', 'w') as file:
+                json.dump(convert_cart_to_json(), file)
+            return res_handler.created_with_results(item_in_cart.to_json())
 
     def DELETE(self):
-        product = ProductModel()
-        product.set_data(json.loads(web.webapi.data()))
-        print("product", product.title)
+        item_in_cart = ItemInCart()
+        json_data = json.loads(web.webapi.data())
+        item_in_cart.set_data(json_data)
+
         for index, item in enumerate(cart):
-            if item.id == product.id:
-                print("index", index)
+            print('item ', item.id, item_in_cart.id)
+            if item.id == item_in_cart.id:
                 cart.pop(index)
-                return res_handler.created_with_results(product.to_json())
+                with open('cart.json', 'w') as file:
+                    json.dump(convert_cart_to_json(), file)
+                return res_handler.deleted_with_results(item_in_cart.to_json())
+
+    def PATCH(self):
+        item_in_cart = ItemInCart()
+        json_data = json.loads(web.webapi.data())
+        item_in_cart.set_data(json_data)
+
+        item = find_item_in_cart(item_in_cart)
+        if item is not None:
+            item.amount = item_in_cart.amount
+            with open('cart.json', 'w') as file:
+                json.dump(convert_cart_to_json(), file)
+            return res_handler.created_with_results(item_in_cart.to_json())
 
 
 def find_user(email):

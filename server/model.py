@@ -41,9 +41,9 @@ class ItemInCart:
         self.id = data['id']
         self.title = data['title']
         self.url = data['url']
-        self.price = data['price']
+        self.price = float(data['price'])
         self.description = data['description']
-        self.amount = data['amount']
+        self.amount = int(data['amount'])
         return self
 
     def to_json(self):
@@ -51,9 +51,9 @@ class ItemInCart:
             'id': self.id,
             'title': self.title,
             'url': self.url,
-            'price': self.price,
+            'price': float(self.price),
             'description': self.description,
-            'amount': self.amount
+            'amount': int(self.amount)
         }
         return data
 
