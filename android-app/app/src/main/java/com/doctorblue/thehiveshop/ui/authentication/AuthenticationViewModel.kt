@@ -18,6 +18,7 @@ class AuthenticationViewModel(private val authenticationRepository: Authenticati
             emit(Resource.Error(null, ex.message ?: "Error!!!"))
         }
     }
+
     fun signIn(user: User) = liveData(Dispatchers.IO) {
         emit(Resource.Loading(null))
         try {
