@@ -1,14 +1,11 @@
 package com.doctorblue.thehiveshop.ui.splashscreen
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import com.doctorblue.thehiveshop.R
 import com.doctorblue.thehiveshop.base.BaseActivity
 import com.doctorblue.thehiveshop.databinding.ActivitySplashScreenBinding
-import com.doctorblue.thehiveshop.databinding.FragmentCartBinding
-import com.doctorblue.thehiveshop.ui.login.LoginActivity
+import com.doctorblue.thehiveshop.ui.authentication.login.LoginActivity
 
 class SplashScreenActivity : BaseActivity() {
 

@@ -16,8 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.login.LoginActivity" />
-        <activity android:name=".ui.register.SignUpActivity" />
+        <activity android:name="com.doctorblue.thehiveshop.ui.authentication.login.LoginActivity" />
+        <activity android:name="com.doctorblue.thehiveshop.ui.authentication.register.SignUpActivity" />
         <activity android:name=".MainActivity" />
     </application>
 

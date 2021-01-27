@@ -1,7 +1,6 @@
-package com.doctorblue.thehiveshop.ui.register
+package com.doctorblue.thehiveshop.ui.authentication.register
 
 import android.os.Bundle
-import android.view.View
 import com.doctorblue.thehiveshop.R
 import com.doctorblue.thehiveshop.base.BaseActivity
 import com.doctorblue.thehiveshop.databinding.ActivitySignupBinding

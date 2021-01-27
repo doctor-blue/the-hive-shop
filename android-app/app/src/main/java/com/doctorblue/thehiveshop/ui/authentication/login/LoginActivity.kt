@@ -1,15 +1,12 @@
-package com.doctorblue.thehiveshop.ui.login
+package com.doctorblue.thehiveshop.ui.authentication.login
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import androidx.navigation.Navigation
-import androidx.navigation.Navigation.findNavController
 import com.doctorblue.thehiveshop.MainActivity
 import com.doctorblue.thehiveshop.R
 import com.doctorblue.thehiveshop.base.BaseActivity
 import com.doctorblue.thehiveshop.databinding.ActivityLoginBinding
-import com.doctorblue.thehiveshop.ui.register.SignUpActivity
+import com.doctorblue.thehiveshop.ui.authentication.register.SignUpActivity
 
 
 class LoginActivity : BaseActivity() {
