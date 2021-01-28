@@ -23,6 +23,8 @@
     <string name="change_password">Change Password</string>
     <string name="login_failed">Email or password is incorrect</string>
     <string name="invalid_email">Wrong email format</string>
+    <string name="not_match_pass">Retyped password isn\'t matched with password</string>
+    <string name="invalid_pass_condition">Password must contains 8 to 20 characters</string>
     <string name="empty_error">This field cannot be empty</string>
     <string name="item_1">Item 1</string>
 </resources>

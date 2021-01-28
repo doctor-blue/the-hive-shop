@@ -90,60 +90,56 @@ class LoginActivity : BaseActivity() {
     }
 
     private fun login() {
+
+        var validEmail = true
+        var validPass = true
+
         if (binding.edtEmail.text.toString().isEmpty()) {
             binding.textInputEmail.error = resources.getString(R.string.empty_error)
+            validEmail = false
+        } else if (!isValidEmail(binding.edtEmail.text.toString())) {
+            binding.textInputEmail.error = resources.getString(R.string.invalid_email)
+            validEmail = false
         }
 
         if (binding.edtPassword.text.toString().isEmpty()) {
             binding.textInputPassword.error = resources.getString(R.string.empty_error)
+            validPass = false
         }
 
-        if (binding.edtPassword.text.toString()
-                .isEmpty() && !isValidEmail(binding.edtEmail.text.toString()) && binding.edtEmail.text.toString()
-                .isNotEmpty()
-        ) {
-            binding.textInputEmail.error = resources.getString(R.string.invalid_email)
-        }
+        if (validEmail && validPass) {
+            authenticationViewModel.signIn(
+                User(
+                    binding.edtEmail.text.toString(),
+                    binding.edtPassword.text.toString(),
+                    "",
+                    true,
+                    "",
+                    "",
+                    false
+                )
+            ).observeForever {
+                it?.let { resource ->
+                    when (resource) {
+                        is Resource.Success -> {
+                            val intent = Intent(this, MainActivity::class.java)
+                            intent.putExtra("USER", resource.data as Serializable)
+                            binding.pbLogin.visibility = View.GONE
+                            startActivity(intent)
+                            finish()
+                        }
 
-        if (binding.edtEmail.text.toString().isNotEmpty() && binding.edtPassword.text.toString()
-                .isNotEmpty()
-        ) {
-            if (!isValidEmail(binding.edtEmail.text.toString())) {
-                binding.textInputEmail.error = resources.getString(R.string.invalid_email)
-            } else {
-                authenticationViewModel.signIn(
-                    User(
-                        binding.edtEmail.text.toString(),
-                        binding.edtPassword.text.toString(),
-                        "",
-                        true,
-                        "",
-                        "",
-                        false
-                    )
-                ).observeForever {
-                    it?.let { resource ->
-                        when (resource) {
-                            is Resource.Success -> {
-                                val intent = Intent(this, MainActivity::class.java)
-                                intent.putExtra("USER", resource.data as Serializable)
-                                binding.pbLogin.visibility = View.GONE
-                                startActivity(intent)
-                                finish()
-                            }
+                        is Resource.Loading -> {
+                            binding.pbLogin.visibility = View.VISIBLE
+                        }
 
-                            is Resource.Loading -> {
-                                binding.pbLogin.visibility = View.VISIBLE
-                            }
-
-                            is Resource.Error -> {
-                                Toast.makeText(
-                                    this,
-                                    resource.message,
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                                binding.pbLogin.visibility = View.GONE
-                            }
+                        is Resource.Error -> {
+                            Toast.makeText(
+                                this,
+                                resource.message,
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            binding.pbLogin.visibility = View.GONE
                         }
                     }
                 }
