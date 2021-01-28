@@ -73,17 +73,27 @@
                 android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
+        <ProgressBar
+            android:id="@+id/pb_login"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_input_password"/>
+
         <com.google.android.material.button.MaterialButton
             android:layout_width="172dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             android:text="@string/sign_in"
             android:id="@+id/btn_sign_in"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="20dp"
             app:backgroundTint="@color/colorAccent"
             android:textColor="@color/colorPrimaryDark"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_input_password" />
+            app:layout_constraintTop_toBottomOf="@+id/pb_login" />
         <com.google.android.material.button.MaterialButton
             android:layout_width="172dp"
             android:layout_height="wrap_content"

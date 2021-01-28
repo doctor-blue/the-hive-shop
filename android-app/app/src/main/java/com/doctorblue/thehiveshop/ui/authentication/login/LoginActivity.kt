@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Patterns
+import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.doctorblue.thehiveshop.Injection
@@ -15,7 +17,6 @@ import com.doctorblue.thehiveshop.model.User
 import com.doctorblue.thehiveshop.ui.authentication.AuthenticationViewModel
 import com.doctorblue.thehiveshop.ui.authentication.register.SignUpActivity
 import com.doctorblue.thehiveshop.utils.Resource
-import kotlinx.android.synthetic.main.activity_login.*
 import java.io.Serializable
 
 
@@ -27,7 +28,7 @@ class LoginActivity : BaseActivity() {
     private val authenticationViewModel by lazy {
         ViewModelProvider(
             this,
-            Injection.provideAuthenViewModelFactory()
+            Injection.provideAuthenViewModelFactory(this)
         )[AuthenticationViewModel::class.java]
     }
 
@@ -53,7 +54,7 @@ class LoginActivity : BaseActivity() {
     }
 
     private fun onTextChanged() {
-        edt_email.addTextChangedListener(object : TextWatcher {
+        binding.edtEmail.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
@@ -70,7 +71,7 @@ class LoginActivity : BaseActivity() {
 
         })
 
-        edt_password.addTextChangedListener(object : TextWatcher {
+        binding.edtPassword.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
 
             }
@@ -97,46 +98,63 @@ class LoginActivity : BaseActivity() {
             binding.textInputPassword.error = resources.getString(R.string.empty_error)
         }
 
+        if (binding.edtPassword.text.toString()
+                .isEmpty() && !isValidEmail(binding.edtEmail.text.toString()) && binding.edtEmail.text.toString()
+                .isNotEmpty()
+        ) {
+            binding.textInputEmail.error = resources.getString(R.string.invalid_email)
+        }
+
         if (binding.edtEmail.text.toString().isNotEmpty() && binding.edtPassword.text.toString()
                 .isNotEmpty()
         ) {
-            authenticationViewModel.signIn(
-                User(
-                    binding.edtEmail.text.toString(),
-                    binding.edtPassword.text.toString(),
-                    "",
-                    true,
-                    "",
-                    "",
-                    false
-                )
-            ).observeForever {
-                it?.let { resource ->
-                    when (resource) {
-                        is Resource.Success -> {
-                            val intent = Intent(this, MainActivity::class.java)
-                            intent.putExtra("USER", resource.data as Serializable)
-                            startActivity(intent)
-                            finish()
-                        }
+            if (!isValidEmail(binding.edtEmail.text.toString())) {
+                binding.textInputEmail.error = resources.getString(R.string.invalid_email)
+            } else {
+                authenticationViewModel.signIn(
+                    User(
+                        binding.edtEmail.text.toString(),
+                        binding.edtPassword.text.toString(),
+                        "",
+                        true,
+                        "",
+                        "",
+                        false
+                    )
+                ).observeForever {
+                    it?.let { resource ->
+                        when (resource) {
+                            is Resource.Success -> {
+                                val intent = Intent(this, MainActivity::class.java)
+                                intent.putExtra("USER", resource.data as Serializable)
+                                binding.pbLogin.visibility = View.GONE
+                                startActivity(intent)
+                                finish()
+                            }
 
-                        is Resource.Loading -> {
+                            is Resource.Loading -> {
+                                binding.pbLogin.visibility = View.VISIBLE
+                            }
 
-                        }
-
-                        is Resource.Error -> {
-                            Toast.makeText(
-                                this,
-                                resources.getString(R.string.login_failed),
-//                                resource.message.toString(),
-                                Toast.LENGTH_SHORT
-                            ).show()
+                            is Resource.Error -> {
+                                Toast.makeText(
+                                    this,
+                                    resource.message,
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                                binding.pbLogin.visibility = View.GONE
+                            }
                         }
                     }
                 }
             }
         }
 
+    }
+
+    private fun isValidEmail(target: CharSequence?): Boolean {
+        return if (target == null) false
+        else Patterns.EMAIL_ADDRESS.matcher(target).matches()
     }
 
 }
