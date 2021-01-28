@@ -1,38 +1,38 @@
 [
-    {
-        "password": "12345678",
-        "address": "Ha Noi",
-        "is_male": "false",
-        "is_admin": "true",
-        "email": "abcd@gmail.com",
-        "date_of_birth": "",
-        "phone_number": ""
-    },
-    {
-        "password": "12345678",
-        "address": "Ha Noi",
-        "is_male": "false",
-        "is_admin": "false",
-        "email": "userdefault1@gmail.com",
-        "date_of_birth": "",
-        "phone_number": ""
-    },
-    {
-        "password": "12345678",
-        "address": "Ho Chi Minh",
-        "is_male": "false",
-        "is_admin": "false",
-        "email": "userdefault2@gmail.com",
-        "date_of_birth": "",
-        "phone_number": ""
-    },
-    {
-        "password": "12345678",
-        "address": "Ha Noi",
-        "is_male": "false",
-        "is_admin": "",
-        "email": "abcde@gmail.com",
-        "date_of_birth": "",
-        "phone_number": ""
-    }
+  {
+    "password": "12345678",
+    "address": "Ha Noi",
+    "is_male": "false",
+    "is_admin": "true",
+    "email": "abcd@gmail.com",
+    "date_of_birth": "",
+    "phone_number": ""
+  },
+  {
+    "password": "12345678",
+    "address": "Ha Noi",
+    "is_male": "false",
+    "is_admin": "false",
+    "email": "userdefault1@gmail.com",
+    "date_of_birth": "",
+    "phone_number": ""
+  },
+  {
+    "password": "12345678",
+    "address": "Ho Chi Minh",
+    "is_male": "false",
+    "is_admin": "false",
+    "email": "userdefault2@gmail.com",
+    "date_of_birth": "",
+    "phone_number": ""
+  },
+  {
+    "password": "12345678",
+    "address": "Ha Noi",
+    "is_male": "false",
+    "is_admin": "",
+    "email": "abcde@gmail.com",
+    "date_of_birth": "",
+    "phone_number": ""
+  }
 ]

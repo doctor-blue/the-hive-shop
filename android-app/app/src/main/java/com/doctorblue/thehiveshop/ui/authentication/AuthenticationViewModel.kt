@@ -3,6 +3,7 @@ package com.doctorblue.thehiveshop.ui.authentication
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
+import com.doctorblue.thehiveshop.R
 import com.doctorblue.thehiveshop.data.AuthenticationRepository
 import com.doctorblue.thehiveshop.model.User
 import com.doctorblue.thehiveshop.utils.Resource
@@ -20,8 +21,10 @@ class AuthenticationViewModel(
         emit(Resource.Loading(null))
         try {
             emit(Resource.Success(authenticationRepository.signUp(user)))
-        } catch (ex: Exception) {
-            emit(Resource.Error(null, ex.message ?: "Error!!!"))
+        } catch (ex: IOException) {
+            emit(Resource.Error(null, context.resources.getString(R.string.connect_failed)))
+        } catch (ex: HttpException) {
+            emit(Resource.Error(null, context.resources.getString(R.string.coincide_email)))
         }
     }
 
@@ -30,9 +33,9 @@ class AuthenticationViewModel(
         try {
             emit(Resource.Success(authenticationRepository.signIn(user)))
         } catch (ex: IOException) {
-            emit(Resource.Error(null, "Can't connect to server"))
+            emit(Resource.Error(null, context.resources.getString(R.string.connect_failed)))
         } catch (ex: HttpException) {
-            emit(Resource.Error(null, "Email or password is incorrect"))
+            emit(Resource.Error(null, context.resources.getString(R.string.login_failed)))
         }
     }
 }

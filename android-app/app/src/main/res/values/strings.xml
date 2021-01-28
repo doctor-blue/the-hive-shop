@@ -22,6 +22,8 @@
     <string name="address">Address</string>
     <string name="change_password">Change Password</string>
     <string name="login_failed">Email or password is incorrect</string>
+    <string name="coincide_email">Email is already taken</string>
+    <string name="connect_failed">Can\'t connect to server</string>
     <string name="invalid_email">Wrong email format</string>
     <string name="not_match_pass">Retyped password isn\'t matched with password</string>
     <string name="invalid_pass_condition">Password must contains 8 to 20 characters</string>
