@@ -12,8 +12,9 @@ import com.doctorblue.thehiveshop.Injection
 import com.doctorblue.thehiveshop.MainActivity
 import com.doctorblue.thehiveshop.R
 import com.doctorblue.thehiveshop.base.BaseActivity
+import com.doctorblue.thehiveshop.data.User
 import com.doctorblue.thehiveshop.databinding.ActivityLoginBinding
-import com.doctorblue.thehiveshop.model.User
+import com.doctorblue.thehiveshop.model.UserModel
 import com.doctorblue.thehiveshop.ui.authentication.AuthenticationViewModel
 import com.doctorblue.thehiveshop.ui.authentication.register.SignUpActivity
 import com.doctorblue.thehiveshop.utils.Resource
@@ -49,7 +50,6 @@ class LoginActivity : BaseActivity() {
         }
 
         onTextChanged()
-
 
     }
 
@@ -109,7 +109,7 @@ class LoginActivity : BaseActivity() {
 
         if (validEmail && validPass) {
             authenticationViewModel.signIn(
-                User(
+                UserModel(
                     binding.edtEmail.text.toString(),
                     binding.edtPassword.text.toString(),
                     "",
@@ -123,7 +123,7 @@ class LoginActivity : BaseActivity() {
                     when (resource) {
                         is Resource.Success -> {
                             val intent = Intent(this, MainActivity::class.java)
-                            intent.putExtra("USER", resource.data as Serializable)
+                            User.setNewUser(resource.data)
                             binding.pbLogin.visibility = View.GONE
                             startActivity(intent)
                             finish()

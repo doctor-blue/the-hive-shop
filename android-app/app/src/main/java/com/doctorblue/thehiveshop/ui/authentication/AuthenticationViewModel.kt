@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.doctorblue.thehiveshop.R
 import com.doctorblue.thehiveshop.data.AuthenticationRepository
-import com.doctorblue.thehiveshop.model.User
+import com.doctorblue.thehiveshop.model.UserModel
 import com.doctorblue.thehiveshop.utils.Resource
 import kotlinx.coroutines.Dispatchers
 import retrofit2.HttpException
@@ -17,7 +17,7 @@ class AuthenticationViewModel(
 ) :
     ViewModel() {
 
-    fun signUp(user: User) = liveData(Dispatchers.IO) {
+    fun signUp(user: UserModel) = liveData(Dispatchers.IO) {
         emit(Resource.Loading(null))
         try {
             emit(Resource.Success(authenticationRepository.signUp(user)))
@@ -28,7 +28,7 @@ class AuthenticationViewModel(
         }
     }
 
-    fun signIn(user: User) = liveData(Dispatchers.IO) {
+    fun signIn(user: UserModel) = liveData(Dispatchers.IO) {
         emit(Resource.Loading(null))
         try {
             emit(Resource.Success(authenticationRepository.signIn(user)))

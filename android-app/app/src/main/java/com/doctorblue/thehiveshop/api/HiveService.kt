@@ -1,6 +1,6 @@
 package com.doctorblue.thehiveshop.api
 
-import com.doctorblue.thehiveshop.model.User
+import com.doctorblue.thehiveshop.model.UserModel
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
@@ -9,10 +9,10 @@ import retrofit2.http.POST
 interface HiveService {
 
     @POST("/authentication/signup")
-    suspend fun signUp(@Body user: User)
+    suspend fun signUp(@Body user: UserModel)
 
     @POST("/authentication/signin")
-    suspend fun signIn(@Body user: User) : User
+    suspend fun signIn(@Body user: UserModel) : UserModel
 
     companion object {
         private const val BASE_URL = "http://192.168.15.105:8080"

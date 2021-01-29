@@ -3,7 +3,7 @@ package com.doctorblue.thehiveshop.model
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class User(
+data class UserModel(
     @field:SerializedName("email") var email: String,
     @field:SerializedName("password") var password: String,
     @field:SerializedName("date_of_birth") var dateOfBirth: String,

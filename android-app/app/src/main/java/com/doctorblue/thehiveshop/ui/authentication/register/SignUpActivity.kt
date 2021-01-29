@@ -1,6 +1,5 @@
 package com.doctorblue.thehiveshop.ui.authentication.register
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -9,16 +8,12 @@ import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.doctorblue.thehiveshop.Injection
-import com.doctorblue.thehiveshop.MainActivity
 import com.doctorblue.thehiveshop.R
 import com.doctorblue.thehiveshop.base.BaseActivity
 import com.doctorblue.thehiveshop.databinding.ActivitySignupBinding
-import com.doctorblue.thehiveshop.model.User
+import com.doctorblue.thehiveshop.model.UserModel
 import com.doctorblue.thehiveshop.ui.authentication.AuthenticationViewModel
 import com.doctorblue.thehiveshop.utils.Resource
-import org.w3c.dom.Text
-import java.io.Serializable
-import java.lang.Double
 
 class SignUpActivity : BaseActivity() {
 
@@ -140,7 +135,7 @@ class SignUpActivity : BaseActivity() {
 
         if (validEmail && validPass && validRePass) {
             authenticationViewModel.signUp(
-                User(
+                UserModel(
                     binding.edtEmail.text.toString(),
                     binding.edtPassword.text.toString(),
                     "",
