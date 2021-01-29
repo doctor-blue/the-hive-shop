@@ -29,4 +29,12 @@
     <string name="invalid_pass_condition">Password must contains 8 to 20 characters</string>
     <string name="empty_error">This field cannot be empty</string>
     <string name="item_1">Item 1</string>
+    <string name="no_results">No results 😓</string>
+    <string name="retry">Retry</string>
+    <string name="cancel">Cancel</string>
+
+    <array name="gender">
+        <item name="male">Male</item>
+        <item name="female">Female</item>
+    </array>
 </resources>

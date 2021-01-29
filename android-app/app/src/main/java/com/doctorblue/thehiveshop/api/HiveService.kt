@@ -1,9 +1,11 @@
 package com.doctorblue.thehiveshop.api
 
+import com.doctorblue.thehiveshop.model.Product
 import com.doctorblue.thehiveshop.model.UserModel
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface HiveService {
@@ -13,6 +15,9 @@ interface HiveService {
 
     @POST("/authentication/signin")
     suspend fun signIn(@Body user: UserModel) : UserModel
+
+    @GET("/products")
+    suspend fun getAllProduct(): List<Product>
 
     companion object {
         private const val BASE_URL = "http://192.168.15.105:8080"

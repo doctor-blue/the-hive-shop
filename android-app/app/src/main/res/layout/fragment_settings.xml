@@ -64,13 +64,14 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:orientation="vertical"
                     android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:orientation="vertical">
+                    android:paddingRight="20dp">
+
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_marginTop="32dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp">
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="0dp"
@@ -82,28 +83,32 @@
                             android:textStyle="bold" />
 
                         <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_email"
                             android:layout_width="0dp"
-                            android:gravity="right"
                             android:layout_height="wrap_content"
-                            android:textSize="15sp"
-                            android:textColor="@color/textColorPrimary"
+                            android:layout_weight="1"
+                            android:gravity="right"
                             android:text="example@gmail.com"
-                            android:layout_weight="1"/>
+                            android:textColor="@color/textColorPrimary"
+                            android:textSize="15sp" />
 
                         <ImageView
                             android:layout_width="32dp"
                             android:layout_height="32dp"
-                            android:src="@drawable/ic_baseline_chevron_right"/>
+                            android:src="@drawable/ic_baseline_chevron_right" />
                     </LinearLayout>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="3dp"
                         android:layout_marginTop="12dp"
-                        android:background="@color/colorAccent"/>
+                        android:background="@color/colorAccent" />
+
                     <LinearLayout
+                        android:id="@+id/item_dob"
                         android:layout_width="match_parent"
-                        android:layout_marginTop="32dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp">
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="0dp"
@@ -115,29 +120,32 @@
                             android:textStyle="bold" />
 
                         <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_dob"
                             android:layout_width="0dp"
-                            android:gravity="right"
                             android:layout_height="wrap_content"
-                            android:textSize="15sp"
-                            android:textColor="@color/textColorPrimary"
+                            android:layout_weight="1"
+                            android:gravity="right"
                             android:text="01/01/2020"
-                            android:layout_weight="1"/>
+                            android:textColor="@color/textColorPrimary"
+                            android:textSize="15sp" />
 
                         <ImageView
                             android:layout_width="32dp"
                             android:layout_height="32dp"
-                            android:src="@drawable/ic_baseline_chevron_right"/>
+                            android:src="@drawable/ic_baseline_chevron_right" />
                     </LinearLayout>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="3dp"
                         android:layout_marginTop="12dp"
-                        android:background="@color/colorAccent"/>
+                        android:background="@color/colorAccent" />
 
                     <LinearLayout
+                        android:id="@+id/item_gender"
                         android:layout_width="match_parent"
-                        android:layout_marginTop="32dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp">
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="0dp"
@@ -149,28 +157,32 @@
                             android:textStyle="bold" />
 
                         <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_gender"
                             android:layout_width="0dp"
-                            android:gravity="right"
                             android:layout_height="wrap_content"
-                            android:textSize="15sp"
-                            android:textColor="@color/textColorPrimary"
+                            android:layout_weight="1"
+                            android:gravity="right"
                             android:text="Male"
-                            android:layout_weight="1"/>
+                            android:textColor="@color/textColorPrimary"
+                            android:textSize="15sp" />
 
                         <ImageView
                             android:layout_width="32dp"
                             android:layout_height="32dp"
-                            android:src="@drawable/ic_baseline_chevron_right"/>
+                            android:src="@drawable/ic_baseline_chevron_right" />
                     </LinearLayout>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="3dp"
                         android:layout_marginTop="12dp"
-                        android:background="@color/colorAccent"/>
+                        android:background="@color/colorAccent" />
+
                     <LinearLayout
+                        android:id="@+id/item_phone_number"
                         android:layout_width="match_parent"
-                        android:layout_marginTop="32dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp">
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="0dp"
@@ -182,29 +194,32 @@
                             android:textStyle="bold" />
 
                         <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_phone_number"
                             android:layout_width="0dp"
-                            android:gravity="right"
                             android:layout_height="wrap_content"
-                            android:textSize="15sp"
-                            android:textColor="@color/textColorPrimary"
+                            android:layout_weight="1"
+                            android:gravity="right"
                             android:text="0987654321"
-                            android:layout_weight="1"/>
+                            android:textColor="@color/textColorPrimary"
+                            android:textSize="15sp" />
 
                         <ImageView
                             android:layout_width="32dp"
                             android:layout_height="32dp"
-                            android:src="@drawable/ic_baseline_chevron_right"/>
+                            android:src="@drawable/ic_baseline_chevron_right" />
                     </LinearLayout>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="3dp"
                         android:layout_marginTop="12dp"
-                        android:background="@color/colorAccent"/>
+                        android:background="@color/colorAccent" />
 
                     <LinearLayout
+                        android:id="@+id/item_address"
                         android:layout_width="match_parent"
-                        android:layout_marginTop="32dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp">
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="0dp"
@@ -216,29 +231,32 @@
                             android:textStyle="bold" />
 
                         <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/txt_address"
                             android:layout_width="0dp"
-                            android:gravity="right"
                             android:layout_height="wrap_content"
-                            android:textSize="15sp"
-                            android:textColor="@color/textColorPrimary"
+                            android:layout_weight="1"
+                            android:gravity="right"
                             android:text="Ha Noi"
-                            android:layout_weight="1"/>
+                            android:textColor="@color/textColorPrimary"
+                            android:textSize="15sp" />
 
                         <ImageView
                             android:layout_width="32dp"
                             android:layout_height="32dp"
-                            android:src="@drawable/ic_baseline_chevron_right"/>
+                            android:src="@drawable/ic_baseline_chevron_right" />
                     </LinearLayout>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="3dp"
                         android:layout_marginTop="12dp"
-                        android:background="@color/colorAccent"/>
+                        android:background="@color/colorAccent" />
 
                     <LinearLayout
+                        android:id="@+id/item_change_pass"
                         android:layout_width="match_parent"
-                        android:layout_marginTop="32dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp">
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="0dp"
@@ -253,18 +271,20 @@
                         <ImageView
                             android:layout_width="32dp"
                             android:layout_height="32dp"
-                            android:src="@drawable/ic_baseline_chevron_right"/>
+                            android:src="@drawable/ic_baseline_chevron_right" />
                     </LinearLayout>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="3dp"
                         android:layout_marginTop="12dp"
-                        android:background="@color/colorAccent"/>
+                        android:background="@color/colorAccent" />
 
                     <LinearLayout
+                        android:id="@+id/item_logout"
                         android:layout_width="match_parent"
-                        android:layout_marginTop="32dp"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp">
 
                         <com.google.android.material.textview.MaterialTextView
                             android:layout_width="0dp"
@@ -278,13 +298,14 @@
                         <ImageView
                             android:layout_width="32dp"
                             android:layout_height="32dp"
-                            android:src="@drawable/ic_baseline_chevron_right"/>
+                            android:src="@drawable/ic_baseline_chevron_right" />
                     </LinearLayout>
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="3dp"
                         android:layout_marginTop="12dp"
-                        android:background="@color/colorAccent"/>
+                        android:background="@color/colorAccent" />
                 </LinearLayout>
             </ScrollView>
         </com.google.android.material.card.MaterialCardView>
