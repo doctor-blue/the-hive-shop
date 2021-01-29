@@ -10,14 +10,14 @@
         "id": "1",
         "title": "Stella sunglasses",
         "url": "https://storage.googleapis.com/material-vignettes.appspot.com/image/1-0.jpg",
-        "price": "$58",
+        "price": "58",
         "description": "description 2"
     },
     {
         "id": "2",
         "title": "Whitney belt",
         "url": "https://storage.googleapis.com/material-vignettes.appspot.com/image/2-0.jpg",
-        "price": "$35",
+        "price": "35",
         "description": "description 3"
     }
 ]
