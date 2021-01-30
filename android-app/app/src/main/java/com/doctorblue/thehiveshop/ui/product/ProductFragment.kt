@@ -3,6 +3,7 @@ package com.doctorblue.thehiveshop.ui.product
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -64,7 +65,10 @@ class ProductFragment : BaseFragment() {
     }
 
     private val openProductDetail: (Product) -> Unit = {
-
+        val bundle = bundleOf(
+            "PRODUCT_DETAIL" to it
+        )
+        controller.navigate(R.id.action_productFragment_to_productDetailFragment,bundle)
     }
 
     private fun refreshData() {
