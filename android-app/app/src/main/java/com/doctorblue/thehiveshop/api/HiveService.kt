@@ -9,6 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PUT
 
 interface HiveService {
 
@@ -20,6 +21,9 @@ interface HiveService {
 
     @GET("/products")
     suspend fun getAllProduct(): List<Product>
+
+    @PUT("/authentication/profile")
+    suspend fun updateProfile(@Body user: UserModel): UserModel
 
     @POST("/cart")
     suspend fun addProductToCart(@Body request: CartRequest)

@@ -3,6 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="email">Email</string>
     <string name="password">Password</string>
+    <string name="new_password">New password</string>
     <string name="sign_in">Sign in</string>
     <string name="welcome_back">Welcome\nback</string>
     <string name="sign_up">Sign Up</string>
@@ -22,6 +23,7 @@
     <string name="address">Address</string>
     <string name="change_password">Change Password</string>
     <string name="login_failed">Email or password is incorrect</string>
+    <string name="update_profile_failed">User not found</string>
     <string name="coincide_email">Email is already taken</string>
     <string name="connect_failed">Can\'t connect to server</string>
     <string name="invalid_email">Wrong email format</string>
@@ -31,9 +33,14 @@
     <string name="item_1">Item 1</string>
     <string name="no_results">No results 😓</string>
     <string name="retry">Retry</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
     <string name="failed">Failed!</string>
     <string name="success">Success!</string>
+    <string name="old_pass_wrong">Your old password is wrong</string>
+    <string name="done">Done</string>
 
     <array name="gender">
         <item name="male">Male</item>
