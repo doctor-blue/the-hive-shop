@@ -13,15 +13,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.splashscreen.SplashScreenActivity">
+
+        </activity>
+        <activity android:name="com.doctorblue.thehiveshop.ui.authentication.login.LoginActivity" />
+        <activity android:name="com.doctorblue.thehiveshop.ui.authentication.register.SignUpActivity" />
+        <activity android:name=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.doctorblue.thehiveshop.ui.authentication.login.LoginActivity" />
-        <activity android:name="com.doctorblue.thehiveshop.ui.authentication.register.SignUpActivity" />
-        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

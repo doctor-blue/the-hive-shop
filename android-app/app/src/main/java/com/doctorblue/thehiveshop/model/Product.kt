@@ -3,10 +3,10 @@ package com.doctorblue.thehiveshop.model
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class Product(
-    @field:SerializedName("id") val id: String,
-    @field:SerializedName("title") var title: String,
-    @field:SerializedName("url") var url: String,
-    @field:SerializedName("price") var price: Float,
-    @field:SerializedName("description") var description: String
+open class Product(
+    @field:SerializedName("id") open val id: String,
+    @field:SerializedName("title") open val title: String,
+    @field:SerializedName("url") open val url: String,
+    @field:SerializedName("price") open val price: Float,
+    @field:SerializedName("description") open val description: String
 ):Serializable

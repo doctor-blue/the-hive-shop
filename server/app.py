@@ -104,10 +104,8 @@ class Cart:
         pass
 
     def GET(self):
-        user = UserModel()
-        user.set_data(json.loads(web.webapi.data()))
         try:
-            cart_json = get_cart_json_by_email(user.email)
+            cart_json = get_cart_json_by_email("abcd@gmail.com")
             return res_handler.get_with_results(cart_json)
         except Exception as err:
             return err_handler.handle_server_error(err)

@@ -1,8 +1,12 @@
 package com.doctorblue.thehiveshop.ui.product
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
@@ -14,7 +18,7 @@ import com.doctorblue.thehiveshop.base.BaseFragment
 import com.doctorblue.thehiveshop.databinding.FragmentProductBinding
 import com.doctorblue.thehiveshop.model.Product
 import com.doctorblue.thehiveshop.utils.Resource
-import kotlinx.android.synthetic.main.fragment_product.*
+
 
 class ProductFragment : BaseFragment() {
 
@@ -36,6 +40,12 @@ class ProductFragment : BaseFragment() {
         ProductAdapter(openProductDetail)
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        setHasOptionsMenu(true)
+        super.onCreate(savedInstanceState)
+
+    }
+
     override fun getLayoutId(): Int = R.layout.fragment_product
 
     override fun initControls(view: View, savedInstanceState: Bundle?) {
@@ -43,7 +53,7 @@ class ProductFragment : BaseFragment() {
         binding.rvProduct.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.rvProduct.setHasFixedSize(true)
         binding.rvProduct.adapter = productAdapter
-
+        (activity as AppCompatActivity).setSupportActionBar(binding.productToolBar)
 
         refreshData()
     }
@@ -68,14 +78,14 @@ class ProductFragment : BaseFragment() {
         val bundle = bundleOf(
             "PRODUCT_DETAIL" to it
         )
-        controller.navigate(R.id.action_productFragment_to_productDetailFragment,bundle)
+        controller.navigate(R.id.action_productFragment_to_productDetailFragment, bundle)
     }
 
     private fun refreshData() {
         productViewModel.getAllProduct().observe(viewLifecycleOwner, {
             binding.retryButton.isVisible = (it !is Resource.Loading && it !is Resource.Success)
             binding.emptyList.isVisible = (it !is Resource.Loading && it !is Resource.Success)
-            rv_product.isVisible = it is Resource.Success
+            binding.rvProduct.isVisible = it is Resource.Success
 
             when (it) {
                 is Resource.Success -> {
@@ -93,6 +103,18 @@ class ProductFragment : BaseFragment() {
                 }
             }
         })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.product_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.mnu_cart) {
+            controller.navigate(R.id.action_productFragment_to_cartFragment)
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }
