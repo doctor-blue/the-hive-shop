@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         tools:context=".ui.detail.ProductDetailFragment">
 
-        <ImageView
+        <com.android.volley.toolbox.NetworkImageView
             android:id="@+id/img_product"
             android:layout_width="match_parent"
             android:layout_height="240dp"
@@ -79,6 +79,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:gravity="center"
+                    android:id="@+id/txt_product_amount"
                     android:text="0"
                     android:textColor="@color/textColorPrimary"
                     android:textSize="18sp" />
@@ -95,6 +96,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:id="@+id/btn_add_to_cart"
                 android:text="@string/add_to_cart"
                 app:icon="@drawable/ic_baseline_add_shopping_cart_24"
                 app:iconTint="@color/textColorPrimary"
