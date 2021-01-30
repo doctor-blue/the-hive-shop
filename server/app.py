@@ -55,14 +55,13 @@ def convert_cart_to_json():
             'email':  item['email'],
             'items': item_in_cart
         })
-    print(cart_json)
     return cart_json
 
 
 def get_cart_json_by_email(email):
     for item in convert_cart_to_json():
         if item['email'] == email:
-            return item['items']
+            return item
     return []
 
 
@@ -116,7 +115,7 @@ class Cart:
     def POST(self):
         item = ItemInCart()
         json_data = json.loads(web.webapi.data())
-        item.set_data(json_data)
+        item.set_data(json_data['item'])
         email = json_data['email']
 
         cart_by_mail = get_cart_by_email(email)
@@ -143,7 +142,7 @@ class Cart:
     def DELETE(self):
         item_in_cart = ItemInCart()
         json_data = json.loads(web.webapi.data())
-        item_in_cart.set_data(json_data)
+        item_in_cart.set_data(json_data['item'])
         email = json_data['email']
 
         cart_by_mail = get_cart_by_email(email)
@@ -158,7 +157,7 @@ class Cart:
     def PATCH(self):
         item = ItemInCart()
         json_data = json.loads(web.webapi.data())
-        item.set_data(json_data)
+        item.set_data(json_data['item'])
         email = json_data['email']
 
         cart_by_mail = get_cart_by_email(email)
