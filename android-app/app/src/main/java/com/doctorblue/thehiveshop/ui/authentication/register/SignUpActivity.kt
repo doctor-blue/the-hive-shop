@@ -105,35 +105,33 @@ class SignUpActivity : BaseActivity() {
 
     private fun register() {
 
-        var validEmail = true
-        var validPass = true
-        var validRePass = true
+        var validUser = true
 
         if (binding.edtEmail.text.toString().isEmpty()) {
             binding.textInputEmail.error = resources.getString(R.string.empty_error)
-            validEmail =false
+            validUser =false
         } else if (!isValidEmail(binding.edtEmail.text.toString())) {
             binding.textInputEmail.error = resources.getString(R.string.invalid_email)
-            validEmail = false
+            validUser = false
         }
 
         if (binding.edtPassword.text.toString().isEmpty()) {
             binding.textInputPassword.error = resources.getString(R.string.empty_error)
-            validPass = false
+            validUser = false
         } else if (binding.edtPassword.text.toString().length < 8 || binding.edtPassword.text.toString().length > 20) {
             binding.textInputPassword.error = resources.getString(R.string.invalid_pass_condition)
-            validPass = false
+            validUser = false
         }
 
         if (binding.edtRePassword.text.toString().isEmpty()) {
             binding.textInputRetypePass.error = resources.getString(R.string.empty_error)
-            validRePass = false
+            validUser = false
         } else if (binding.edtPassword.text.toString() != binding.edtRePassword.text.toString()) {
             binding.textInputRetypePass.error = resources.getString(R.string.not_match_pass)
-            validRePass = false
+            validUser = false
         }
 
-        if (validEmail && validPass && validRePass) {
+        if (validUser) {
             authenticationViewModel.signUp(
                 UserModel(
                     binding.edtEmail.text.toString(),

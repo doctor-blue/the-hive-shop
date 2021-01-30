@@ -7,6 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PUT
 
 interface HiveService {
 
@@ -18,6 +19,9 @@ interface HiveService {
 
     @GET("/products")
     suspend fun getAllProduct(): List<Product>
+
+    @PUT("/authentication/profile")
+    suspend fun updateProfile(@Body user: UserModel) : UserModel
 
     companion object {
         private const val BASE_URL = "http://192.168.15.105:8080"

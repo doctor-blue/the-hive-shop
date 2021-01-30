@@ -23,7 +23,7 @@ cart = []
 users = []
 
 # get all products
-with open('product_test.json', 'r') as file:
+with open('products.json', 'r') as file:
     products = createProductModel(json.load(file))
 
 # get all item from cart
@@ -229,6 +229,9 @@ class Profile:
             user.address = user_obj.address
             user.is_male = user_obj.is_male
             user.password = user_obj.password
+            user.date_of_birth = user_obj.date_of_birth
+            user.phone_number = user_obj.phone_number
+            user.is_admin = user_obj.is_admin
 
             with open('users.json', 'w') as file:
                 json.dump(convert_users_to_json(), file)
