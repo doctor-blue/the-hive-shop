@@ -2,10 +2,10 @@
   {
     "password": "12345678",
     "address": "Ha Noi",
-    "is_male": true,
+    "is_male": false,
     "is_admin": true,
     "email": "abcd@gmail.com",
-    "date_of_birth": "1-1-2021",
+    "date_of_birth": "27-2-2021",
     "phone_number": "0987654321"
   },
   {

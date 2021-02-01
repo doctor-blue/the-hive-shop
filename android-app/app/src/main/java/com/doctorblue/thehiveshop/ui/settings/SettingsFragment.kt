@@ -12,6 +12,7 @@ import android.view.View
 import android.view.Window
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.doctorblue.thehiveshop.Injection
 import com.doctorblue.thehiveshop.R
 import com.doctorblue.thehiveshop.base.BaseFragment
@@ -28,10 +29,14 @@ import kotlinx.android.synthetic.main.fragment_settings.*
 import java.util.*
 
 
-class SettingsFragment : BaseFragment() {
+class SettingsFragment : BaseFragment(), View.OnClickListener {
 
     private val binding: FragmentSettingsBinding
         get() = (getViewBinding() as FragmentSettingsBinding)
+
+    private val controller by lazy {
+        findNavController()
+    }
 
     private val settingViewModel by lazy {
         ViewModelProvider(
@@ -40,9 +45,16 @@ class SettingsFragment : BaseFragment() {
         )[SettingViewModel::class.java]
     }
 
+    private val dialogLoading by lazy {
+        Dialog(requireContext())
+    }
+
     override fun getLayoutId(): Int = R.layout.fragment_settings
 
     override fun initControls(view: View, savedInstanceState: Bundle?) {
+        dialogLoading.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialogLoading.setCancelable(false)
+        dialogLoading.setContentView(R.layout.dialog_loading)
         binding.txtEmail.text = User.email
         binding.txtDob.text = User.dateOfBirth
         binding.txtGender.text = if (User.isMale) "Male" else "Female"
@@ -51,146 +63,23 @@ class SettingsFragment : BaseFragment() {
     }
 
     override fun initEvents() {
-
-        binding.itemDob.setOnClickListener {
-            val c: Calendar = Calendar.getInstance()
-
-            var year: Int
-            var month: Int
-            var day: Int
-
-            if (binding.txtDob.text == "") {
-                year = c.get(Calendar.YEAR)
-                month = c.get(Calendar.MONTH)
-                day = c.get(Calendar.DAY_OF_MONTH)
-            } else {
-                year = c.get(Calendar.YEAR)
-                month = c.get(Calendar.MONTH)
-                day = c.get(Calendar.DAY_OF_MONTH)
-            }
-
-            val datePickerDialog = DatePickerDialog(
-                requireContext(), R.style.DialogTheme,
-                { view, year, monthOfYear, dayOfMonth ->
-                    User.dateOfBirth = dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year
-                    // Push to server
-
-                    settingViewModel.updateUser(User.getUserInfo()).observeForever {
-                        observeData(it, binding.txtDob, User.dateOfBirth)
-                    }
-                },
-                year, month, day,
-            )
-            datePickerDialog.show()
+        binding.itemDob.setOnClickListener(this)
+        binding.itemGender.setOnClickListener(this)
+        binding.itemPhoneNumber.setOnClickListener(this)
+        binding.itemAddress.setOnClickListener(this)
+        binding.itemChangePass.setOnClickListener(this)
+        binding.itemLogout.setOnClickListener(this)
+        toolbar_setting.setNavigationOnClickListener {
+            controller.popBackStack()
         }
-
-        binding.itemGender.setOnClickListener {
-            val genderDialog: AlertDialog.Builder = AlertDialog.Builder(
-                activity,
-                R.style.DialogTheme
-            )
-            genderDialog.apply {
-                setTitle(resources.getString(R.string.gender))
-                setItems(R.array.gender) { dialog, which ->
-                    var gender: String
-                    when (which) {
-                        0 -> {
-                            User.isMale = true
-                            gender = "Male"
-
-                            // Push to server
-                            settingViewModel.updateUser(User.getUserInfo()).observeForever {
-                                observeData(it, binding.txtGender, gender)
-                            }
-                        }
-                        1 -> {
-                            User.isMale = false
-                            gender = "Female"
-                            // Push to server
-                            settingViewModel.updateUser(User.getUserInfo()).observeForever {
-                                observeData(it, binding.txtGender, gender)
-                            }
-                        }
-                    }
-                    dialog.dismiss()
-                }
-            }
-            genderDialog.create().show()
-        }
-
-        binding.itemPhoneNumber.setOnClickListener {
-            val dialogTitle = resources.getString(R.string.phone_number)
-            showDialog(
-                R.layout.dialog_add_text,
-                dialogTitle,
-                binding.txtPhoneNumber.text.toString(),
-                InputType.TYPE_CLASS_PHONE
-            ) { edtDialog ->
-                User.phoneNumber = edtDialog.text.toString()
-                settingViewModel.updateUser(User.getUserInfo()).observeForever {
-                    observeData(it, binding.txtPhoneNumber, User.phoneNumber)
-                }
-
-            }
-        }
-
-        binding.itemAddress.setOnClickListener {
-            val dialogTitle = resources.getString(R.string.address)
-            showDialog(
-                R.layout.dialog_add_text,
-                dialogTitle,
-                binding.txtAddress.text.toString(),
-                InputType.TYPE_CLASS_TEXT
-            ) { edtDialog ->
-                User.address = edtDialog.text.toString()
-                settingViewModel.updateUser(User.getUserInfo()).observeForever {
-                    observeData(it, binding.txtAddress, User.address)
-                }
-            }
-        }
-
-        binding.itemChangePass.setOnClickListener {
-            val dialogTitle = resources.getString(R.string.change_password)
-            showDialog(
-                R.layout.dialog_change_pass,
-                dialogTitle,
-                binding.txtPass.text.toString(),
-                InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
-            ) { edtDialog ->
-                User.password = edtDialog.text.toString()
-                settingViewModel.updateUser(User.getUserInfo()).observeForever {
-                    observeData(it, binding.txtAddress, "")
-                }
-            }
-        }
-
-        binding.itemLogout.setOnClickListener {
-            val logoutDialog: AlertDialog.Builder = AlertDialog.Builder(
-                activity,
-                R.style.DialogTheme
-            )
-            logoutDialog.apply {
-                setTitle(resources.getString(R.string.logout))
-                setMessage("Are you sure you want to log out?")
-                setPositiveButton(R.string.logout) { dialog, id ->
-                    User.logOut()
-                    startActivity(Intent(requireContext(), LoginActivity::class.java))
-                    activity?.finish()
-                }
-                setNegativeButton(R.string.cancel) { dialog, id ->
-                    dialog.dismiss()
-                }
-            }
-
-            logoutDialog.create().show()
-        }
-
     }
 
     private fun observeData(resource: Resource<UserModel>, textView: MaterialTextView, data: Any) {
         resource?.let {
             when (it) {
+
                 is Resource.Success -> {
+                    dialogLoading.dismiss()
                     textView.text = data.toString()
                     Toast.makeText(
                         requireContext(),
@@ -200,10 +89,11 @@ class SettingsFragment : BaseFragment() {
                 }
 
                 is Resource.Loading -> {
-
+                    dialogLoading.show()
                 }
 
                 is Resource.Error -> {
+                    dialogLoading.dismiss()
                     Toast.makeText(
                         requireContext(),
                         it.message,
@@ -369,6 +259,146 @@ class SettingsFragment : BaseFragment() {
             resources.getColor(R.color.strong_pass_color)
         } else {
             resources.getColor(R.color.weak_pass_color)
+        }
+    }
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.item_dob -> {
+                val c: Calendar = Calendar.getInstance()
+
+                var year: Int
+                var month: Int
+                var day: Int
+
+                if (binding.txtDob.text == "") {
+                    year = c.get(Calendar.YEAR)
+                    month = c.get(Calendar.MONTH)
+                    day = c.get(Calendar.DAY_OF_MONTH)
+                } else {
+                    year = c.get(Calendar.YEAR)
+                    month = c.get(Calendar.MONTH)
+                    day = c.get(Calendar.DAY_OF_MONTH)
+                }
+
+                val datePickerDialog = DatePickerDialog(
+                    requireContext(), R.style.DialogTheme,
+                    { view, year, monthOfYear, dayOfMonth ->
+                        User.dateOfBirth =
+                            dayOfMonth.toString() + "-" + (monthOfYear + 1) + "-" + year
+                        // Push to server
+
+                        settingViewModel.updateUser(User.getUserInfo()).observeForever {
+                            observeData(it, binding.txtDob, User.dateOfBirth)
+                        }
+                    },
+                    year, month, day,
+                )
+                datePickerDialog.show()
+            }
+
+            R.id.item_gender -> {
+                val genderDialog: AlertDialog.Builder = AlertDialog.Builder(
+                    activity,
+                    R.style.DialogTheme
+                )
+                genderDialog.apply {
+                    setTitle(resources.getString(R.string.gender))
+                    setItems(R.array.gender) { dialog, which ->
+                        var gender: String
+                        when (which) {
+                            0 -> {
+                                User.isMale = true
+                                gender = "Male"
+
+                                // Push to server
+                                settingViewModel.updateUser(User.getUserInfo()).observeForever {
+                                    observeData(it, binding.txtGender, gender)
+                                }
+                            }
+                            1 -> {
+                                User.isMale = false
+                                gender = "Female"
+                                // Push to server
+                                settingViewModel.updateUser(User.getUserInfo()).observeForever {
+                                    observeData(it, binding.txtGender, gender)
+                                }
+                            }
+                        }
+                        dialog.dismiss()
+                    }
+                }
+                genderDialog.create().show()
+            }
+
+            R.id.item_phone_number -> {
+                val dialogTitle = resources.getString(R.string.phone_number)
+                showDialog(
+                    R.layout.dialog_add_text,
+                    dialogTitle,
+                    binding.txtPhoneNumber.text.toString(),
+                    InputType.TYPE_CLASS_PHONE
+                ) { edtDialog ->
+                    User.phoneNumber = edtDialog.text.toString()
+                    settingViewModel.updateUser(User.getUserInfo()).observeForever {
+                        observeData(it, binding.txtPhoneNumber, User.phoneNumber)
+                    }
+
+                }
+            }
+
+            R.id.item_address -> {
+                val dialogTitle = resources.getString(R.string.address)
+                showDialog(
+                    R.layout.dialog_add_text,
+                    dialogTitle,
+                    binding.txtAddress.text.toString(),
+                    InputType.TYPE_CLASS_TEXT
+                ) { edtDialog ->
+                    User.address = edtDialog.text.toString()
+                    settingViewModel.updateUser(User.getUserInfo()).observeForever {
+                        observeData(it, binding.txtAddress, User.address)
+                    }
+                }
+            }
+
+            R.id.item_change_pass -> {
+                val dialogTitle = resources.getString(R.string.change_password)
+                showDialog(
+                    R.layout.dialog_change_pass,
+                    dialogTitle,
+                    binding.txtPass.text.toString(),
+                    InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                ) { edtDialog ->
+                    User.password = edtDialog.text.toString()
+                    settingViewModel.updateUser(User.getUserInfo()).observeForever {
+                        observeData(it, binding.txtAddress, "")
+                    }
+                }
+            }
+
+            R.id.item_logout -> {
+                val dialog = Dialog(requireContext())
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+                dialog.setCancelable(false)
+                dialog.setContentView(R.layout.dialog_confirm)
+                val title = dialog.findViewById<MaterialTextView>(R.id.txt_dialog_title)
+                title.text = resources.getString(R.string.logout)
+                val message = dialog.findViewById<MaterialTextView>(R.id.txt_dialog_message)
+                message.text = resources.getString(R.string.logout_message)
+                val btnConfirm = dialog.findViewById<MaterialButton>(R.id.btn_confirm)
+                val btnCancel = dialog.findViewById<MaterialButton>(R.id.btn_cancel)
+                btnConfirm.setOnClickListener {
+                    User.logOut()
+                    startActivity(Intent(requireContext(), LoginActivity::class.java))
+                    activity?.finish()
+                }
+
+                btnCancel.setOnClickListener {
+                    dialog.dismiss()
+                }
+                dialog.show()
+            }
         }
     }
 

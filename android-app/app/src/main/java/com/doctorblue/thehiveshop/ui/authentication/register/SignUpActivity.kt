@@ -1,10 +1,12 @@
 package com.doctorblue.thehiveshop.ui.authentication.register
 
+import android.app.Dialog
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Patterns
 import android.view.View
+import android.view.Window
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.doctorblue.thehiveshop.Injection
@@ -27,10 +29,16 @@ class SignUpActivity : BaseActivity() {
         )[AuthenticationViewModel::class.java]
     }
 
+    private val dialogLoading by lazy {
+        Dialog(this)
+    }
+
     override fun getLayoutId(): Int = R.layout.activity_signup
 
     override fun initControls(savedInstanceState: Bundle?) {
-
+        dialogLoading.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialogLoading.setCancelable(false)
+        dialogLoading.setContentView(R.layout.dialog_loading)
     }
 
     override fun initEvents() {
@@ -146,21 +154,21 @@ class SignUpActivity : BaseActivity() {
                 it?.let { resource ->
                     when (resource) {
                         is Resource.Success -> {
-                            binding.pbLogin.visibility = View.GONE
+                            dialogLoading.dismiss()
                             finish()
                         }
 
                         is Resource.Loading -> {
-                            binding.pbLogin.visibility = View.VISIBLE
+                            dialogLoading.show()
                         }
 
                         is Resource.Error -> {
+                            dialogLoading.dismiss()
                             Toast.makeText(
                                 this,
                                 resource.message,
                                 Toast.LENGTH_SHORT
                             ).show()
-                            binding.pbLogin.visibility = View.GONE
                         }
                     }
                 }

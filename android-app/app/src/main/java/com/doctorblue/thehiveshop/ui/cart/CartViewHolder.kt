@@ -12,6 +12,7 @@ import com.doctorblue.thehiveshop.utils.ImageRequester
 class CartViewHolder(
     private val binding: ItemInCartBinding,
     private val onItemClick: (ItemInCart) -> Unit,
+    private val onItemLongClick: (ItemInCart) -> Unit,
     private val updateAmount: (ItemInCart, () -> Unit) -> Unit
 
 ) :
@@ -48,6 +49,13 @@ class CartViewHolder(
                 onItemClick(it)
             }
         }
+
+        binding.layoutItemInCart.setOnClickListener {
+            itemInCart?.let {
+                onItemLongClick(it)
+            }
+        }
+
     }
 
     private val onError: () -> Unit = {
@@ -75,11 +83,12 @@ class CartViewHolder(
             inflater: LayoutInflater,
             parent: ViewGroup,
             onItemClick: (ItemInCart) -> Unit,
+            onItemLongClick: (ItemInCart) -> Unit,
             updateAmount: (ItemInCart,()->Unit) -> Unit
         ): CartViewHolder {
             val binding: ItemInCartBinding =
                 DataBindingUtil.inflate(inflater, R.layout.item_in_cart, parent, false)
-            return CartViewHolder(binding, onItemClick, updateAmount)
+            return CartViewHolder(binding, onItemClick, onItemLongClick,updateAmount)
         }
     }
 

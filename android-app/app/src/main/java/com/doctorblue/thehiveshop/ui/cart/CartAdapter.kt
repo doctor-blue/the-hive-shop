@@ -7,6 +7,7 @@ import com.doctorblue.thehiveshop.model.ItemInCart
 
 class CartAdapter(
     private val onItemClick: (ItemInCart) -> Unit,
+    private val onItemLongClick: (ItemInCart) -> Unit,
     private val updateAmount: (ItemInCart,()->Unit) -> Unit
 ) : RecyclerView.Adapter<CartViewHolder>() {
     var cart: List<ItemInCart> = listOf()
@@ -17,7 +18,7 @@ class CartAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return CartViewHolder.create(inflater, parent, onItemClick, updateAmount)
+        return CartViewHolder.create(inflater, parent, onItemClick, onItemLongClick, updateAmount)
     }
 
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {

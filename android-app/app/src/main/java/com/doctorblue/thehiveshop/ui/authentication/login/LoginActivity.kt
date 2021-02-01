@@ -1,11 +1,15 @@
 package com.doctorblue.thehiveshop.ui.authentication.login
 
+import android.app.Dialog
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Patterns
 import android.view.View
+import android.view.Window
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.doctorblue.thehiveshop.Injection
@@ -33,10 +37,23 @@ class LoginActivity : BaseActivity() {
         )[AuthenticationViewModel::class.java]
     }
 
+    private val dialogLoading by lazy {
+        Dialog(this)
+    }
+
+    private val sharedPreferences: SharedPreferences by lazy {
+        getSharedPreferences("USER_EMAIL", Context.MODE_PRIVATE)
+    }
+
     override fun getLayoutId(): Int = R.layout.activity_login
 
     override fun initControls(savedInstanceState: Bundle?) {
-
+        if(sharedPreferences.getString("EMAIL", "") != null) {
+            binding.edtEmail.setText(sharedPreferences.getString("EMAIL", ""))
+        }
+        dialogLoading.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialogLoading.setCancelable(false)
+        dialogLoading.setContentView(R.layout.dialog_loading)
     }
 
     override fun initEvents() {
@@ -122,24 +139,27 @@ class LoginActivity : BaseActivity() {
                 it?.let { resource ->
                     when (resource) {
                         is Resource.Success -> {
-                            val intent = Intent(this, MainActivity::class.java)
                             User.setNewUser(resource.data)
-                            binding.pbLogin.visibility = View.GONE
+                            val editor: SharedPreferences.Editor = sharedPreferences.edit()
+                            editor.putString("EMAIL", User.email)
+                            editor.apply()
+                            dialogLoading.dismiss()
+                            val intent = Intent(this, MainActivity::class.java)
                             startActivity(intent)
                             finish()
                         }
 
                         is Resource.Loading -> {
-                            binding.pbLogin.visibility = View.VISIBLE
+                            dialogLoading.show()
                         }
 
                         is Resource.Error -> {
+                            dialogLoading.dismiss()
                             Toast.makeText(
                                 this,
                                 resource.message,
                                 Toast.LENGTH_SHORT
                             ).show()
-                            binding.pbLogin.visibility = View.GONE
                         }
                     }
                 }

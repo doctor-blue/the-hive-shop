@@ -100,26 +100,16 @@
                 android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
-        <ProgressBar
-            android:id="@+id/pb_login"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
-            android:visibility="gone"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_input_retype_pass"/>
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_register"
             android:layout_width="172dp"
             android:layout_height="wrap_content"
             android:text="@string/sign_up"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             app:backgroundTint="@color/colorPrimaryDark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/pb_login" />
+            app:layout_constraintTop_toBottomOf="@+id/text_input_retype_pass" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

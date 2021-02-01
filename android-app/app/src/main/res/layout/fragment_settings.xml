@@ -22,6 +22,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_setting"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:navigationIcon="@drawable/ic_arrow_back"
@@ -106,6 +107,7 @@
 
                     <LinearLayout
                         android:id="@+id/item_dob"
+                        android:onClick="onDOBClick"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="32dp">
@@ -143,6 +145,7 @@
 
                     <LinearLayout
                         android:id="@+id/item_gender"
+                        android:onClick="onGenderClick"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="32dp">
@@ -180,6 +183,7 @@
 
                     <LinearLayout
                         android:id="@+id/item_phone_number"
+                        android:onClick="onPhoneClick"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="32dp">
@@ -217,6 +221,7 @@
 
                     <LinearLayout
                         android:id="@+id/item_address"
+                        android:onClick="onAddressClick"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="32dp">
@@ -254,6 +259,7 @@
 
                     <LinearLayout
                         android:id="@+id/item_change_pass"
+                        android:onClick="onChangePassClick"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="32dp">
@@ -290,6 +296,7 @@
 
                     <LinearLayout
                         android:id="@+id/item_logout"
+                        android:onClick="onLogOutClick"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="32dp">
