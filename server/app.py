@@ -23,7 +23,7 @@ cart = []
 users = []
 
 # get all products
-with open('product_test.json', 'r') as file:
+with open('products.json', 'r') as file:
     products = createProductModel(json.load(file))
 
 # get all item from cart
