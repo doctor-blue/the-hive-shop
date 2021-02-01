@@ -12,19 +12,21 @@ import com.doctorblue.thehiveshop.utils.ImageRequester
 class CartViewHolder(
     private val binding: ItemInCartBinding,
     private val onItemClick: (ItemInCart) -> Unit,
-    private val updateAmount: (ItemInCart) -> Unit
+    private val updateAmount: (ItemInCart, () -> Unit) -> Unit
 
 ) :
     RecyclerView.ViewHolder(binding.root) {
 
     private var itemInCart: ItemInCart? = null
+    private var isReduce = false
 
     init {
         binding.btnIncrease.setOnClickListener {
             itemInCart?.let {
+                isReduce = false
                 it.amount++
                 binding.txtProductAmount.text = it.amount.toString()
-                updateAmount(it)
+                updateAmount(it, onError)
 
             }
 
@@ -32,17 +34,30 @@ class CartViewHolder(
 
         binding.btnReduce.setOnClickListener {
             itemInCart?.let {
-                it.amount = if (it.amount > 0) it.amount - 1 else it.amount
+                isReduce = true
+                it.amount = if (it.amount >1) it.amount - 1 else it.amount
 
                 binding.txtProductAmount.text = it.amount.toString()
-                updateAmount(it)
+                updateAmount(it, onError)
 
             }
         }
+
         binding.layoutItemInCart.setOnClickListener {
             itemInCart?.let {
                 onItemClick(it)
             }
+        }
+    }
+
+    private val onError: () -> Unit = {
+        itemInCart?.let {
+            if (isReduce) {
+                it.amount++
+            } else {
+                it.amount--
+            }
+            binding.txtProductAmount.text = it.amount.toString()
         }
     }
 
@@ -60,7 +75,7 @@ class CartViewHolder(
             inflater: LayoutInflater,
             parent: ViewGroup,
             onItemClick: (ItemInCart) -> Unit,
-            updateAmount: (ItemInCart) -> Unit
+            updateAmount: (ItemInCart,()->Unit) -> Unit
         ): CartViewHolder {
             val binding: ItemInCartBinding =
                 DataBindingUtil.inflate(inflater, R.layout.item_in_cart, parent, false)

@@ -28,7 +28,7 @@ class ProductViewHolder(
         this.product = product
         ImageRequester.setImageFromUrl(binding.productImage,product.url)
         binding.txtProductTitle.text = product.title
-        binding.txtProductPrice.text = ("${product.price}$")
+        binding.txtProductPrice.text = ("$${product.price}")
 
     }
 

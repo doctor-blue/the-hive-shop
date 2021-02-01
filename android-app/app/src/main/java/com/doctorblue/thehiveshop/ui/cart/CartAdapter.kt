@@ -7,7 +7,7 @@ import com.doctorblue.thehiveshop.model.ItemInCart
 
 class CartAdapter(
     private val onItemClick: (ItemInCart) -> Unit,
-    private val updateAmount: (ItemInCart) -> Unit
+    private val updateAmount: (ItemInCart,()->Unit) -> Unit
 ) : RecyclerView.Adapter<CartViewHolder>() {
     var cart: List<ItemInCart> = listOf()
         set(value) {

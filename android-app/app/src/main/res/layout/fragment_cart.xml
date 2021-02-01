@@ -11,8 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appBarLayout"
@@ -23,6 +22,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_cart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:navigationIcon="@drawable/ic_arrow_back"
@@ -33,9 +33,9 @@
             android:id="@+id/sf_cart"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/linearLayout2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/btn_buy"
             app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
 
             <androidx.recyclerview.widget.RecyclerView
@@ -44,16 +44,51 @@
                 android:layout_height="match_parent" />
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/btn_buy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="10dp"
+                android:paddingLeft="10dp"
+                android:text="@string/amount_to_be_paid"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="10dp"
+                android:text="0$"
+                android:id="@+id/txt_amount"
+                android:textColor="@color/textColorPrimary"
+                android:textSize="18sp"
+                tools:ignore="RtlHardcoded,RtlSymmetry" />
+        </LinearLayout>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_buy"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/buy"
             android:layout_marginLeft="32dp"
             android:layout_marginRight="32dp"
             android:layout_marginBottom="10dp"
-            app:backgroundTint="@color/colorAccent"
+            android:text="@string/buy"
             android:textColor="@color/textColorPrimary"
+            app:backgroundTint="@color/colorAccent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

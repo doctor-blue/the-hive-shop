@@ -41,6 +41,7 @@
     <string name="success">Success!</string>
     <string name="old_pass_wrong">Your old password is wrong</string>
     <string name="done">Done</string>
+    <string name="amount_to_be_paid">Amount to be paid:</string>
 
     <array name="gender">
         <item name="male">Male</item>

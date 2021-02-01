@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.doctorblue.thehiveshop.Injection
 import com.doctorblue.thehiveshop.R
 import com.doctorblue.thehiveshop.base.BaseFragment
@@ -24,7 +25,11 @@ class ProductDetailFragment : BaseFragment() {
 
     override fun getLayoutId(): Int = R.layout.fragment_product_detail
 
-    var productAmount: Int = 0
+    var productAmount: Int = 1
+        set(value) {
+            field = value
+            binding.txtProductAmount.text = productAmount.toString()
+        }
 
     private val cartViewModel by lazy {
         ViewModelProvider(
@@ -41,24 +46,24 @@ class ProductDetailFragment : BaseFragment() {
         setData()
 
     }
-
+    private val controller by lazy {
+        findNavController()
+    }
 
     override fun initEvents() {
         binding.btnIncrease.setOnClickListener {
             productAmount++
-            binding.txtProductAmount.text = productAmount.toString()
         }
 
         binding.btnReduce.setOnClickListener {
-            productAmount = if (productAmount > 0) productAmount - 1 else productAmount
-            binding.txtProductAmount.text = productAmount.toString()
+            productAmount = if (productAmount > 1) productAmount - 1 else productAmount
         }
 
         binding.btnAddToCart.setOnClickListener {
             product?.let {
                 val itemInCart =
                     ItemInCart(it.id, it.title, it.url, it.price, it.description, productAmount)
-                val request = CartRequest(User.email,itemInCart)
+                val request = CartRequest(User.email, itemInCart)
                 cartViewModel.addProductToCart(request).observe(viewLifecycleOwner, {
                     when (it) {
                         is Resource.Success -> {
@@ -76,14 +81,19 @@ class ProductDetailFragment : BaseFragment() {
                 })
             }
         }
+
+        binding.toolbarDetail.setNavigationOnClickListener {
+            controller.popBackStack()
+        }
     }
 
     private fun setData() {
         product?.let {
             ImageRequester.setImageFromUrl(binding.imgProduct, it.url)
-            binding.txtProductPrice.text = ("${it.price}$")
+            binding.txtProductPrice.text = ("$${it.price}")
             binding.txtProductTitle.text = it.title
             binding.txtProductDescription.text = it.description
+            binding.txtProductAmount.text = productAmount.toString()
 
         }
     }

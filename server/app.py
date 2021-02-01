@@ -12,7 +12,8 @@ routes = (
     '/cart', 'Cart',
     '/authentication/signin', 'SignIn',
     '/authentication/signup', 'SignUp',
-    '/authentication/profile', 'Profile'
+    '/authentication/profile', 'Profile',
+    '/cart/(.*)', 'CartSearch'
 )
 
 err_handler = ErrorHandler()
@@ -98,17 +99,20 @@ class Product:
         except Exception as err:
             return err_handler.handle_server_error(err)
 
+class CartSearch:
+    def __init__(self):
+            pass
+
+    def GET(self,email):
+        try:
+            cart_json = get_cart_json_by_email(email)
+            return res_handler.get_with_results(cart_json)
+        except Exception as err:
+            return err_handler.handle_server_error(err)
 
 class Cart:
     def __init__(self):
         pass
-
-    def GET(self):
-        try:
-            cart_json = get_cart_json_by_email("abcd@gmail.com")
-            return res_handler.get_with_results(cart_json)
-        except Exception as err:
-            return err_handler.handle_server_error(err)
 
     def POST(self):
         item = ItemInCart()
@@ -137,7 +141,7 @@ class Cart:
             json.dump(convert_cart_to_json(), file)
         return res_handler.created_with_results(item.to_json())
 
-    def DELETE(self):
+    def PUT(self):
         item_in_cart = ItemInCart()
         json_data = json.loads(web.webapi.data())
         item_in_cart.set_data(json_data['item'])

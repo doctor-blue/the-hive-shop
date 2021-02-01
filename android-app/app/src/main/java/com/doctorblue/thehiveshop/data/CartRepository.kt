@@ -1,11 +1,14 @@
 package com.doctorblue.thehiveshop.data
 
 import com.doctorblue.thehiveshop.api.HiveService
-import com.doctorblue.thehiveshop.model.UserModel
 
 class CartRepository(private val service: HiveService) {
 
     suspend fun addProductToCart(request: CartRequest) = service.addProductToCart(request)
 
-    suspend fun getCart(userModel: UserModel) = service.getCart()
+    suspend fun getCart() = service.getCart(User.email)
+
+    suspend fun updateItemAmount(request: CartRequest) = service.updateItemAmount(request)
+
+    suspend fun deleteItem(request: CartRequest) = service.deleteItem(request)
 }
