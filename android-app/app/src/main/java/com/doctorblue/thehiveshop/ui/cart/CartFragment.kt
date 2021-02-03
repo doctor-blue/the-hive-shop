@@ -156,7 +156,7 @@ class CartFragment : BaseFragment() {
 
     }
 
-    private val onItemLongClick: (ItemInCart) -> Unit = { item ->
+    private val onItemLongClick: (ItemInCart) -> Boolean = { item ->
         val dialog = Dialog(requireContext())
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setCancelable(false)
@@ -192,6 +192,7 @@ class CartFragment : BaseFragment() {
             dialog.dismiss()
         }
         dialog.show()
+        false
     }
 
 }

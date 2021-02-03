@@ -76,6 +76,7 @@
             style="@style/Widget.HiveShop.TextInputLayout.OutlineBox">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_password"
+                android:maxLength="20"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"/>
@@ -95,6 +96,7 @@
             style="@style/Widget.HiveShop.TextInputLayout.OutlineBox">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edt_re_password"
+                android:maxLength="20"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"/>
