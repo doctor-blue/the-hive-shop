@@ -37,7 +37,7 @@ interface HiveService {
     suspend fun deleteItem(@Body request: CartRequest)
 
     companion object {
-        private const val BASE_URL = "http://192.168.15.105:8080"
+        private const val BASE_URL = "http://192.168.0.105:8080"
 
         fun create(): HiveService = Retrofit.Builder()
             .baseUrl(BASE_URL)

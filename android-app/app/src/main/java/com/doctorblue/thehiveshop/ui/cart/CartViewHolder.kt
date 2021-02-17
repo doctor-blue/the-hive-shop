@@ -73,7 +73,7 @@ class CartViewHolder(
         this.itemInCart = itemInCart
         binding.txtProductTitle.text = itemInCart.title
         binding.txtProductAmount.text = itemInCart.amount.toString()
-        binding.txtProductPrice.text = ("${itemInCart.price}$")
+        binding.txtProductPrice.text = ("$${itemInCart.price}")
         ImageRequester.setImageFromUrl(binding.productImage, itemInCart.url)
 
     }
