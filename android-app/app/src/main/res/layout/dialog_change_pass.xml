@@ -27,6 +27,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_dialog_1"
+            android:maxLength="20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword" />
@@ -44,6 +45,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_dialog_2"
+            android:maxLength="20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword" />
@@ -61,6 +63,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edt_dialog_3"
+            android:maxLength="20"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword" />

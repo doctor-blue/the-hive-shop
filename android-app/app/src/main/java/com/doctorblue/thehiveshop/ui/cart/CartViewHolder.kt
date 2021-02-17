@@ -12,7 +12,7 @@ import com.doctorblue.thehiveshop.utils.ImageRequester
 class CartViewHolder(
     private val binding: ItemInCartBinding,
     private val onItemClick: (ItemInCart) -> Unit,
-    private val onItemLongClick: (ItemInCart) -> Unit,
+    private val onItemLongClick: (ItemInCart) -> Boolean,
     private val updateAmount: (ItemInCart, () -> Unit) -> Unit
 
 ) :
@@ -50,9 +50,9 @@ class CartViewHolder(
             }
         }
 
-        binding.layoutItemInCart.setOnClickListener {
-            itemInCart?.let {
-                onItemLongClick(it)
+        binding.layoutItemInCart.setOnLongClickListener {
+            itemInCart.let {
+                onItemLongClick(it!!)
             }
         }
 
@@ -73,7 +73,7 @@ class CartViewHolder(
         this.itemInCart = itemInCart
         binding.txtProductTitle.text = itemInCart.title
         binding.txtProductAmount.text = itemInCart.amount.toString()
-        binding.txtProductPrice.text = ("${itemInCart.price}$")
+        binding.txtProductPrice.text = ("$${itemInCart.price}")
         ImageRequester.setImageFromUrl(binding.productImage, itemInCart.url)
 
     }
@@ -83,7 +83,7 @@ class CartViewHolder(
             inflater: LayoutInflater,
             parent: ViewGroup,
             onItemClick: (ItemInCart) -> Unit,
-            onItemLongClick: (ItemInCart) -> Unit,
+            onItemLongClick: (ItemInCart) -> Boolean,
             updateAmount: (ItemInCart,()->Unit) -> Unit
         ): CartViewHolder {
             val binding: ItemInCartBinding =

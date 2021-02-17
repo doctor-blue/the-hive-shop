@@ -41,8 +41,15 @@
 
             <ImageView
                 android:id="@+id/img_avatar"
+                android:src="@drawable/ic_hive_shop"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+
+            <ImageView
+                android:src="@drawable/ic_hive"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
