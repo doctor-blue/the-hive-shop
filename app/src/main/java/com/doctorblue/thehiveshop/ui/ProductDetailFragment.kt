@@ -7,17 +7,18 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.doctorblue.thehiveshop.R
-import com.doctorblue.thehiveshop.databinding.FragmentProductBinding
+import com.doctorblue.thehiveshop.databinding.FragmentProductDetailBinding
 
-class ProductFragment : Fragment() {
-    private lateinit var binding : FragmentProductBinding
+class ProductDetailFragment : Fragment() {
+    private lateinit var binding: FragmentProductDetailBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_product,container,false)
+        binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_product_detail, container, false)
 
         return binding.root
     }
@@ -35,5 +36,4 @@ class ProductFragment : Fragment() {
     private fun initControls() {
 
     }
-
 }

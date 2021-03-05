@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,83 +25,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf2c89ff-fc0e-4e7f-a5f6-f4506599a296" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/android-app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/androidTest/java/com/doctorblue/thehiveshop/ExampleInstrumentedTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/java/com/doctorblue/thehiveshop/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/java/com/doctorblue/thehiveshop/application/HiveApplication.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/java/com/doctorblue/thehiveshop/ui/ProductFragment.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/java/com/doctorblue/thehiveshop/utils/ImageRequester.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/bg_login.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/border.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_arrow_back.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_baseline_add_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_baseline_add_shopping_cart_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_baseline_chevron_right.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_baseline_remove.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_baseline_search_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_bee.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_logout_outlined.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_menu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_next.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_outline_shopping_cart.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/layout/fragment_cart.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/layout/fragment_login.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/layout/fragment_product.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/layout/fragment_product_detail.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/layout/fragment_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/layout/fragment_signup.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/layout/item_in_cart.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/layout/item_product.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/layout/product_amount.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/menu/product_menu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/app/src/test/java/com/doctorblue/thehiveshop/ExampleUnitTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/android-app/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/cart.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/error_handler.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/product_test.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/products.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/response_handler.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/users.json" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/doctorblue/thehiveshop/ui/ProductDetailFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_graph.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/doctorblue/thehiveshop/ui/ProductFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/doctorblue/thehiveshop/ui/ProductFragment.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,6 +56,14 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="navigationResourceFile" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -144,7 +87,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="The_Hive_Shop.app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -220,7 +163,21 @@
       <option name="project" value="LOCAL" />
       <updated>1614912197829</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Remove server">
+      <created>1614912461396</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1614912461396</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Remove server">
+      <created>1614912482324</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1614912482324</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -240,9 +197,14 @@
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
     <MESSAGE value="Remove python server" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove python server" />
+    <MESSAGE value="Remove server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove server" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="543" y="312" width="824" height="486" key="AndroidCreateResourceFileDialog" timestamp="1614930632362">
+      <screen x="0" y="28" width="2944" height="1052" />
+    </state>
+    <state x="543" y="312" width="824" height="486" key="AndroidCreateResourceFileDialog/0.28.2944.1052@0.28.2944.1052" timestamp="1614930632362" />
     <state x="583" y="300" width="824" height="510" key="IDE.errors.dialog" timestamp="1614912151152">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
@@ -251,5 +213,9 @@
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
     <state x="497" y="189" width="1007" height="732" key="SettingsEditor/0.28.1920.1052@0.28.1920.1052" timestamp="1614912178514" />
+    <state x="658" y="281" width="672" height="678" key="search.everywhere.popup" timestamp="1614927824181">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="658" y="281" width="672" height="678" key="search.everywhere.popup/0.28.1920.1052@0.28.1920.1052" timestamp="1614927824181" />
   </component>
 </project>
