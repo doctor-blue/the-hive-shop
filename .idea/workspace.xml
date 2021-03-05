@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cf2c89ff-fc0e-4e7f-a5f6-f4506599a296" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/android-app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/androidTest/java/com/doctorblue/thehiveshop/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/java/com/doctorblue/thehiveshop/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/java/com/doctorblue/thehiveshop/application/HiveApplication.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/java/com/doctorblue/thehiveshop/ui/ProductFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/java/com/doctorblue/thehiveshop/utils/ImageRequester.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/bg_login.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/border.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_arrow_back.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_baseline_add_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_baseline_add_shopping_cart_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_baseline_chevron_right.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_baseline_remove.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_baseline_search_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_bee.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_logout_outlined.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_next.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/drawable/ic_outline_shopping_cart.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/layout/fragment_cart.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/layout/fragment_login.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/layout/fragment_product.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/layout/fragment_product_detail.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/layout/fragment_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/layout/fragment_signup.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/layout/item_in_cart.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/layout/item_product.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/layout/product_amount.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/menu/product_menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/app/src/test/java/com/doctorblue/thehiveshop/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android-app/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/cart.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/error_handler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/product_test.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/products.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/response_handler.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/users.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1pJreeI1rrZdSHqxQ6zJ1Rfx2nc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="The_Hive_Shop.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cf2c89ff-fc0e-4e7f-a5f6-f4506599a296" name="Default Changelist" comment="" />
+      <created>1614912130377</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1614912130377</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Remove python server">
+      <created>1614912197829</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1614912197829</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+    <MESSAGE value="Remove python server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove python server" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="583" y="300" width="824" height="510" key="IDE.errors.dialog" timestamp="1614912151152">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="583" y="300" width="824" height="510" key="IDE.errors.dialog/0.28.1920.1052@0.28.1920.1052" timestamp="1614912151152" />
+    <state x="497" y="189" width="1007" height="732" key="SettingsEditor" timestamp="1614912178514">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="497" y="189" width="1007" height="732" key="SettingsEditor/0.28.1920.1052@0.28.1920.1052" timestamp="1614912178514" />
+  </component>
+</project>

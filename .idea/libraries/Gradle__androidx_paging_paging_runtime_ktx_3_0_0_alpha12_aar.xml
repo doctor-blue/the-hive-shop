@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.paging:paging-runtime-ktx:3.0.0-alpha12@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4b9aaf3660b22219ec54c93d9001fa11/jetified-paging-runtime-ktx-3.0.0-alpha12/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4b9aaf3660b22219ec54c93d9001fa11/jetified-paging-runtime-ktx-3.0.0-alpha12/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4b9aaf3660b22219ec54c93d9001fa11/jetified-paging-runtime-ktx-3.0.0-alpha12/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.paging/paging-runtime-ktx/3.0.0-alpha12/5b8f86fea035328fc9e8c660773037a3401ce25f/paging-runtime-ktx-3.0.0-alpha12-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
