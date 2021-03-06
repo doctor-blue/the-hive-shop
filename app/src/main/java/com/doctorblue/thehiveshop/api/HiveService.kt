@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 interface HiveService {
 
-    @GET("/products/page&per_page")
+    @GET("/products?page&per_page")
     suspend fun getAllProducts(
         @Query("page") page: Int,
         @Query("per_page") itemsPerPage: Int
@@ -16,7 +16,7 @@ interface HiveService {
 
 
     companion object {
-        private const val BASE_URL = "http://0.0.0.0:8080"
+        private const val BASE_URL = "http://192.168.0.105:8080"
         fun create(): HiveService =
             Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create())
                 .build().create(HiveService::class.java)
