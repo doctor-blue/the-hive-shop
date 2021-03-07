@@ -25,18 +25,31 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:step03" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf2c89ff-fc0e-4e7f-a5f6-f4506599a296" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/doctorblue/thehiveshop/ui/ProductAdapter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/doctorblue/thehiveshop/ui/ProductViewHolder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/doctorblue/thehiveshop/ui/LoadStateAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/doctorblue/thehiveshop/ui/LoadStateViewHolder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/load_state_view_item.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/doctorblue/thehiveshop/api/HiveService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/doctorblue/thehiveshop/api/HiveService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/doctorblue/thehiveshop/ui/ProductFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/doctorblue/thehiveshop/ui/ProductFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_product.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_product.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_product.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_product.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,11 +79,17 @@
       <list>
         <option value="navigationResourceFile" />
         <option value="Kotlin Interface" />
+        <option value="layoutResourceFile_vertical" />
         <option value="Kotlin Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1pJreeI1rrZdSHqxQ6zJ1Rfx2nc" />
@@ -213,7 +232,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="step03" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -231,13 +262,25 @@
     <option name="LAST_COMMIT_MESSAGE" value="Complete step02" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="741" y="273" width="428" height="570" key="#com.intellij.ide.util.MemberChooser" timestamp="1615002361210">
+    <state x="741" y="273" width="428" height="572" key="#com.intellij.ide.util.MemberChooser" timestamp="1615084955796">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
+    <state x="741" y="273" width="428" height="572" key="#com.intellij.ide.util.MemberChooser/0.28.1920.1052/1920.0.1024.768@0.28.1920.1052" timestamp="1615084955796" />
     <state x="741" y="273" width="428" height="570" key="#com.intellij.ide.util.MemberChooser/0.28.1920.1052/1920.0.1280.1024@0.28.1920.1052" timestamp="1615002361210" />
-    <state x="543" y="312" width="824" height="486" key="AndroidCreateResourceFileDialog" timestamp="1614930632362">
-      <screen x="0" y="28" width="2944" height="1052" />
+    <state x="472" y="303" width="524" height="504" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615086138879">
+      <screen x="0" y="28" width="1920" height="1052" />
     </state>
+    <state x="472" y="303" width="524" height="504" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.28.1920.1052/1920.0.1280.1024@0.28.1920.1052" timestamp="1615086138879" />
+    <state x="111" y="180" width="1256" height="589" key="AVDManager" timestamp="1615086413667">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="111" y="180" width="1256" height="589" key="AVDManager/0.28.1920.1052/1920.0.1024.768@0.28.1920.1052" timestamp="1615085911657" />
+    <state x="111" y="180" width="1256" height="589" key="AVDManager/0.28.1920.1052/1920.0.1280.1024@0.28.1920.1052" timestamp="1615086413667" />
+    <state x="770" y="283" width="824" height="486" key="AndroidCreateResourceFileDialog" timestamp="1615086260429">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state x="770" y="283" key="AndroidCreateResourceFileDialog/0.28.1920.1052/1920.0.1024.768@0.28.1920.1052" timestamp="1615083880974" />
+    <state x="770" y="283" key="AndroidCreateResourceFileDialog/0.28.1920.1052/1920.0.1280.1024@0.28.1920.1052" timestamp="1615086260429" />
     <state x="543" y="312" width="824" height="486" key="AndroidCreateResourceFileDialog/0.28.2944.1052@0.28.2944.1052" timestamp="1614930632362" />
     <state width="1469" height="277" key="GridCell.Tab.0.bottom" timestamp="1615020247177">
       <screen x="0" y="28" width="1920" height="1052" />

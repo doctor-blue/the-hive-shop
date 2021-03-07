@@ -56,7 +56,11 @@ class ProductFragment : Fragment() {
     private fun initControls() {
         binding.rvProduct.setHasFixedSize(true)
         binding.rvProduct.layoutManager = GridLayoutManager(requireContext(),2)
-        binding.rvProduct.adapter = adapter
+
+        binding.rvProduct.adapter = adapter.withLoadStateHeaderAndFooter(
+            header = LoadStateAdapter{ adapter.retry() },
+            footer = LoadStateAdapter{ adapter.retry() },
+        )
 
         getProductFromApi()
     }
