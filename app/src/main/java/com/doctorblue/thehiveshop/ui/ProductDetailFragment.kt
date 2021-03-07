@@ -8,6 +8,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.doctorblue.thehiveshop.R
 import com.doctorblue.thehiveshop.databinding.FragmentProductDetailBinding
+import com.doctorblue.thehiveshop.model.Product
+import com.doctorblue.thehiveshop.utils.ImageRequester
 
 class ProductDetailFragment : Fragment() {
     private lateinit var binding: FragmentProductDetailBinding
@@ -34,6 +36,13 @@ class ProductDetailFragment : Fragment() {
     }
 
     private fun initControls() {
+        val product = arguments?.get("PRODUCT_DETAIL") as Product?
 
+        product?.let {
+            ImageRequester.setImageFromUrl(binding.imgProduct, it.url)
+            binding.txtProductTitle.text = it.title
+            binding.txtProductPrice.text = ("$${it.price}")
+            binding.txtProductDescription.text = it.description
+        }
     }
 }
