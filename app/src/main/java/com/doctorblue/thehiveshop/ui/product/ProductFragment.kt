@@ -1,6 +1,7 @@
 package com.doctorblue.thehiveshop.ui.product
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -116,5 +117,4 @@ class ProductFragment : BaseFragment() {
         }
         return super.onOptionsItemSelected(item)
     }
-
 }

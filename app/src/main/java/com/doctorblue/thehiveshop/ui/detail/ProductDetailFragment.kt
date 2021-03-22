@@ -90,6 +90,7 @@ class ProductDetailFragment : BaseFragment() {
                         }
                     }
                 })
+                findNavController().popBackStack()
             }
         }
 

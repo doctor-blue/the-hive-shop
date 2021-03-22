@@ -6,7 +6,9 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Patterns
 import android.view.View
+import android.view.View.OnFocusChangeListener
 import android.view.Window
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.doctorblue.thehiveshop.Injection
@@ -16,6 +18,7 @@ import com.doctorblue.thehiveshop.databinding.ActivitySignupBinding
 import com.doctorblue.thehiveshop.model.UserModel
 import com.doctorblue.thehiveshop.ui.authentication.AuthenticationViewModel
 import com.doctorblue.thehiveshop.utils.Resource
+
 
 class SignUpActivity : BaseActivity() {
 
@@ -109,6 +112,24 @@ class SignUpActivity : BaseActivity() {
             }
 
         })
+        binding.edtEmail.onFocusChangeListener =
+            OnFocusChangeListener { v, hasFocus ->
+                if (!hasFocus) {
+                    hideKeyboard(v)
+                }
+            }
+        binding.edtPassword.onFocusChangeListener =
+            OnFocusChangeListener { v, hasFocus ->
+                if (!hasFocus) {
+                    hideKeyboard(v)
+                }
+            }
+        binding.edtPassword.onFocusChangeListener =
+            OnFocusChangeListener { v, hasFocus ->
+                if (!hasFocus) {
+                    hideKeyboard(v)
+                }
+            }
     }
 
     private fun register() {
@@ -117,7 +138,7 @@ class SignUpActivity : BaseActivity() {
 
         if (binding.edtEmail.text.toString().isEmpty()) {
             binding.textInputEmail.error = resources.getString(R.string.empty_error)
-            validUser =false
+            validUser = false
         } else if (!isValidEmail(binding.edtEmail.text.toString())) {
             binding.textInputEmail.error = resources.getString(R.string.invalid_email)
             validUser = false
@@ -177,7 +198,7 @@ class SignUpActivity : BaseActivity() {
     }
 
     private fun checkStrengthPass(pass: String): Int {
-        var chars = pass.toCharArray()
+        val chars = pass.toCharArray()
         var containDigit: Boolean = false
         var containUpperCase: Boolean = false
         var containLowerCase: Boolean = false
@@ -200,6 +221,12 @@ class SignUpActivity : BaseActivity() {
     private fun isValidEmail(target: CharSequence?): Boolean {
         return if (target == null) false
         else Patterns.EMAIL_ADDRESS.matcher(target).matches()
+    }
+
+    private fun hideKeyboard(view: View) {
+        val inputMethodManager: InputMethodManager =
+            getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
     }
 
 }
